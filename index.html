@@ -86,7 +86,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
 					</div>
 				</section>
 				
@@ -148,11 +148,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-分布式锁的几种实现方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/08/03/hello-world/" class="article-date">
-  	<time datetime="2022-08-03T10:52:44.281Z" itemprop="datePublished">2022-08-03</time>
+      <a href="/2022/07/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
 </a>
     </div>
   
@@ -165,8 +165,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/03/hello-world/">
-        Hello World
+      <a class="article-title" href="/2022/07/25/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">
+        分布式锁的集中实现方式
         
       </a>
     </h1>
@@ -177,19 +177,489 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/austinspark-jessylu/p/8043726.html">原文链接：分布式锁的几种实现方式</a></p>
+<hr>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>目前几乎很多大型网站及应用都是分布式部署的，分布式场景中的数据一致性问题一直是一个比较重要的话题。分布式的 CAP 理论告诉我们“任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。”所以，很多系统在设计之初就要对这三者做出取舍。在互联网领域的绝大多数的场景中，都需要牺牲强一致性来换取系统的高可用性，系统往往只需要保证“最终一致性”，只要这个最终时间是在用户可以接受的范围内即可。</p>
+<p>在很多场景中，我们为了保证数据的最终一致性，需要很多的技术方案来支持，比如分布式事务、分布式锁等。有的时候，我们需要保证一个方法在同一时间内只能被同一个线程执行。在单机环境中，Java 中其实提供了很多并发处理相关的 API，但是这些 API 在分布式场景中就无能为力了。也就是说单纯的 Java Api 并不能提供分布式锁的能力。所以针对分布式锁的实现目前有多种方案。</p>
+<h3 id="常见解决方法"><a href="#常见解决方法" class="headerlink" title="常见解决方法"></a>常见解决方法</h3><ul>
+<li>基于数据库实现分布式锁</li>
+<li>基于缓存（redis，memcached，tair）</li>
+<li>实现分布式锁 基于 Zookeeper 实现分布式锁</li>
+</ul>
+<h3 id="需要的分布式锁应该是怎么样的？"><a href="#需要的分布式锁应该是怎么样的？" class="headerlink" title="需要的分布式锁应该是怎么样的？"></a>需要的分布式锁应该是怎么样的？</h3><p>这里以方法锁为例，资源锁同理</p>
+<ul>
+<li>可以保证在分布式部署的应用集群中，同一个方法在同一时间只能被一台机器上的一个线程执行。</li>
+<li>这把锁要是一把可重入锁（避免死锁）</li>
+<li>这把锁最好是一把阻塞锁（根据业务需求考虑要不要这条）</li>
+<li>有高可用的获取锁和释放锁功能</li>
+<li>获取锁和释放锁的性能要好</li>
+</ul>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" rel="tag">分布式锁</a></li></ul>
+	</div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-字符串的展开" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B1%95%E5%BC%80/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B1%95%E5%BC%80/">
+        字符串的展开题目
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串，字符串包含数字、大小写字母以及括号（包括大括号，中括号，小括号），括号可以嵌套，即括号里面可以出现数字和括号。</p>
+<p>按照如下规则对字符串进行展开，不需要考虑括号不成对的问题，不考虑数字后面没有括号的情况，即 2a2(b)不考虑。</p>
+<ul>
+<li>数字表示括号里的字符串重复的次数，展开后的字符串不包含括号</li>
+<li>将字符串进行逆序展开</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入abc2&#123;de3[fg]&#125;</span><br><span class="line"></span><br><span class="line">输出gfgfgfedgfgfgfedcba</span><br></pre></td></tr></table></figure>
+
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>利用栈进行计算，每次判断此时是否是右括号，如果是的话，拿到对应的左括号之前的所有字符，在拿到对应左括号的数字，对字符进行重复以后，全部入栈。</p>
+<p>如果不是右括号，那么直接入栈。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> scanner.nextLine();</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> line.length();</span><br><span class="line">        LinkedList&lt;String&gt; stack1 = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输入abc2&#123;de3[fg]&#125;</span></span><br><span class="line">        <span class="comment">//输出gfgfgfedgfgfgfedcba</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">temp</span> <span class="operator">=</span> line.charAt(i) + <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;)]&#125;&quot;</span>.contains(temp)) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//得到上一个（括号之前的字母</span></span><br><span class="line">                <span class="type">StringBuilder</span> <span class="variable">dup</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">                <span class="keyword">while</span> (!<span class="string">&quot;(&#123;[&quot;</span>.contains(stack1.getFirst())) &#123;</span><br><span class="line">                    dup.insert(<span class="number">0</span>,stack1.removeFirst());</span><br><span class="line">                &#125;</span><br><span class="line">                stack1.removeFirst();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//注意此时的坑，因为数字可能是多位数，因此需要得到所有的数字</span></span><br><span class="line">                <span class="type">StringBuilder</span> <span class="variable">numStr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">                <span class="keyword">while</span> (!stack1.isEmpty() &amp;&amp; stack1.getFirst().matches(<span class="string">&quot;[0-9]&quot;</span>)) &#123;</span><br><span class="line">                    numStr.insert(<span class="number">0</span>, stack1.removeFirst());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Integer.parseInt(numStr.toString());</span><br><span class="line"></span><br><span class="line">                <span class="comment">//按照(前的数字进行重复，并且再次压入栈</span></span><br><span class="line">                <span class="type">StringBuilder</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">                <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    str.append(dup);</span><br><span class="line">                    --num;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; str.length(); k++) &#123;</span><br><span class="line">                    stack1.addFirst(str.charAt(k) + <span class="string">&quot;&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                stack1.addFirst(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">while</span> (!stack1.isEmpty()) &#123;</span><br><span class="line">            result.append(stack1.removeFirst());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(result.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/" rel="tag">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" rel="tag">华为笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" rel="tag">后台开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-日历设计与实验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E9%AA%8C/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E9%AA%8C/">
+        待办事项日历的设计、实验文档
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><p>如图所示。在日历的右侧设置了事项面板，并且根据按照全天和自定义的方式分别设置了两个框图，在下方是显示事件的栏目。</p>
+<p><img src="/lab3%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/calendar.png" alt="日历UI"><br>左侧显示的是日历，当成功添加一个事件，对应的日期变为黄色。当删除一个事件的时候，变回原来的颜色。</p>
+<p>点击左侧日期时，按钮变为灰色，并且全天事项变为当天。如果当天有事项，就在下方显示出对应的事项。</p>
+<h2 id="代办事项功能设计"><a href="#代办事项功能设计" class="headerlink" title="代办事项功能设计"></a>代办事项功能设计</h2><p>待办事项是一个独立的功能，因此可以重写一个 CalendarItem 类，DateChooser 类，ItemUtil 类来控制这个功能。</p>
+<h3 id="CalendarItem-类"><a href="#CalendarItem-类" class="headerlink" title="CalendarItem 类"></a>CalendarItem 类</h3><blockquote>
+<p>该类继承自 CalendarDate 类，表示日历中会用到的事项，并且提供了几个属性 :Date start,Date end 分别表示开始的日期和结束的日期；属性 text 保存相关的待办事项；</p>
+</blockquote>
+<table>
+        <tr>
+            <th>方法名</th>
+            <th>方法描述</th>
+        </tr>
+        <tr>
+            <th>CalendarItem(Date start, Date end, String text)</th>
+            <th>参数为代办事项的开始时间以及结束时间，输入的Date对象为null，或者text为null，那么就抛出异常（CalendarException）</th>
+        </tr>
+</table>
+
+<h3 id="ItemUtil-类"><a href="#ItemUtil-类" class="headerlink" title="ItemUtil 类"></a>ItemUtil 类</h3><blockquote>
+<p>该类是工具类，提供事项和日期相关的一些计算和判断方法。该构造函数已经被声明为 private，因此不可以实例化。属性 list<CalendarItem>属于 static，得到保存的事项列表。</p>
+</blockquote>
+<table>
+    <tr>
+        <th>方法名</th>
+        <th>方法描述</th>
+    </tr>
+    <tr>
+        <th>checkInTime(Date start, Date end, CalendarItem item)</th>
+        <th>参数为查询的日期，以及事项，返回值为boolean值。当事项的时间与输入的时间段有交叉部分时2，返回true。注意：当输入的对象全部为null，或者开始时间大于结束时间的时候，返回false。</th>
+    </tr>
+    <tr>
+        <th>hasItem(Date start)</th>
+        <th>参数为一天的年月日，返返回值为boolean值。判断这一天是否有项目，这个是用于更新面板时的动作。如果这一天有事项存在，那么返回true。<br>注意：当输入的对象为null时，返回false。</th>
+    </tr>
+    <tr>
+        <th>getItems(DateChooser chooser)</th>
+        <th>参数为DateChooser面板类型的对象，返回值为List<CalendarItem>。输入需要查询的面板类型，从中可以得到面板上的时间，从而得到在该时间段所有的事列表。<br>注意：当输入的chooser对象为null，返回null。</th>
+    </tr>
+    <tr>
+        <th>formmat(Date date)</th>
+        <th>参数为日期对象，返回值为Date对象。主要作用是将这个日期设置为当天的23：59分。<br>注意：当传入的参数为null时，返回null</th>
+    </tr>
+</table>
+
+<h3 id="DateChooser-类"><a href="#DateChooser-类" class="headerlink" title="DateChooser 类"></a>DateChooser 类</h3><blockquote>
+<p>继承自 JPanl，这是一个定制化的面板，定制化 JSpinner 对象，用于选择日期，还有查询按钮和添加事件的按钮。因为全天设置查询和自定义的设置查询不同，因此日期选择的行为也不同，也就是选择器上显示的日期不同。</p>
+</blockquote>
+<table>
+    <tr>
+        <th>方法名</th>
+        <th>方法描述</th>
+    </tr>
+    <tr>
+        <th>DateChooser(int select)</th>
+        <th>输入为int值，1或者2，分别代表是全天查询还是任意查询。</th>
+    </tr>
+    <tr>
+        <th>setText(Date startDate, Date endDate)</th>
+        <th>参数为开始时间和结束时间，用于设置时间选择器上的日期显示，没有返回值。如果输入的时间为null，或者不符合逻辑，那么将日期重新设置为今天。</th>
+    </tr>
+</table>
+
+<h2 id="实验报告"><a href="#实验报告" class="headerlink" title="实验报告"></a>实验报告</h2><h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><p>待办事项是一个独立的功能，因此可以重写一个 CalendarItem 类，DateChooser 类，ItemUtil 类来控制这个功能。</p>
+<p>CalendarItem 类是一个保存有关事项的类，里面主要保存事件的开始时间和结束时间，以及内容。每次成功创立一个事件之后，都 new 一个 CalendarItem 对象，并且将它保存在一个 Static 的 list 列表中。</p>
+<p>ItemUtil 类是一个工具类，构造函数已经被 private 修饰，因此不能实例化。里面封装了和事项有关的各种工具。这个类主要被 DateChooser 类调用。</p>
+<p>DateChooser 类继承自 JPanel，这是一个定制化的面板，设置了两个 JSpinner 的对象，用于选择日期，还有查询按钮和添加事件的按钮。因为全天设置查询和自定义的设置查询不同，因此日期选择的行为也不同。</p>
+<p>事项的面板和日历的属于不同的个体，在上面进行操作，两者的联系便在于开始日期和结束日期。因为在日历面板的上方可以得到当前年月，因此二者可以顺利的匹配。</p>
+<h4 id="设计亮点"><a href="#设计亮点" class="headerlink" title="设计亮点"></a>设计亮点</h4><p>此次设计主要有以下亮点：</p>
+<blockquote>
+<ul>
+<li>面板设置人性化，较为合理。在日历的右侧设置了事项面板，并且根据按照全天和自定义的方式分别设置了两个框图，在下方是显示事件的栏目，一目了然。</li>
+<li>用户交互十分友好。按照逻辑，显然开始时间必须小于等于结束时间，因此动态监听了时间选择器的内容改变事件。当结束时间小于开始的时候，就<strong>自动将结束时间调整为开始时间</strong>，极大地避免了用户因为失误而造成的逻辑混乱。</li>
+<li>时间选择器的设置。此次学习到采用定制的<strong>JSpinner 组件</strong>十分的方便快捷。如下所示，windows 的内部也是采用这个模型，显然十分的简捷和方便，易于编辑并且选择。对于用户的错误输入，他可以自行处理为正确的，比如超过合理的输入，它可以自动进行时分的运算，转换为对应的第二天；或者选择没有反应。</li>
+</ul>
+</blockquote>
+<pre><code>//获得时间日期模型
+SpinnerDateModel model = new SpinnerDateModel();
+//获得JSPinner对象
+JSpinner year = new JSpinner(model);
+year.setValue(new Date());
+</code></pre>
+<h4 id="设计遗憾"><a href="#设计遗憾" class="headerlink" title="设计遗憾"></a>设计遗憾</h4><blockquote>
+<ul>
+<li>由于对 swing 组件的错误认知，导致界面上有许多可以继续改进的地方。比如颜色形状等。</li>
+<li>查询事件的时候，在下方的框内显示事项不怎么友好。因为时间原因，并且对于 swing 的 Box 布局不熟，多个事项往往会溢出整个 frame；并且当添加的事项内容过多的时候，只能查看到一部分。这些都是需要改进的地方。</li>
+</ul>
+</blockquote>
+<h4 id="所遇问题及解决方法"><a href="#所遇问题及解决方法" class="headerlink" title="所遇问题及解决方法"></a>所遇问题及解决方法</h4><blockquote>
+<ol>
+<li>如何处理全天和自定义日期之间的关系？</li>
+</ol>
+</blockquote>
+<pre><code>`因为按照全天和自定义的日期进行操作，在本质上相同，都是有着开始和结束时间。因此可以将两者归为一类进行事件的处理。将全天的开始时间设为00：00，结束设为23：59，就可以和自定义的用同一种事件处理机制。`
+</code></pre>
+<blockquote>
+<ol>
+<li>如何设置时间选择器？</li>
+</ol>
+</blockquote>
+<pre><code>`想了很多种方法，最简单的就是直接设置两个TexxtField框，让用户进行文本的输入，再次进行判断。可是这样对于用户很不友好，因为需要输入的文本过长，因此可能导致错误的输入。因此采用**JSpinner的组件**，用户既可以输入，也可以点击两旁的按钮进行选择；并且可以处理用户的错误输入，比如超过合理的输入，它可以自动进行时分的运算，转换为对应的第二天；或者不反应。`
+</code></pre>
+<blockquote>
+<ol>
+<li>点击删除按钮的时候，如何正确删除事件？</li>
+</ol>
+</blockquote>
+<pre><code>`因为需要将删除按钮和事件进行绑定，因此需要得到delete按钮的属性。e.getSource得到的是一个event，我一开始无论如何都无法得到事件源的属性。最终终于得到一个方法，就是将event强制转化为JButton类型，才解决问题。`
+</code></pre>
+<h4 id="Test-类的修改说明"><a href="#Test-类的修改说明" class="headerlink" title="Test 类的修改说明"></a>Test 类的修改说明</h4><ul>
+<li>新的测试改变了工具类 ItemUtil 类的测试用例，因为重新定义了用户输入日期的组件，并且组件可以自动判断自身的合法性，因此无需再重新鉴定输入的合法。</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" rel="tag">日历实验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" rel="tag">日历设计</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/">课程实验</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-广告系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E5%B9%BF%E5%91%8A%E7%B3%BB%E7%BB%9F/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/%E5%B9%BF%E5%91%8A%E7%B3%BB%E7%BB%9F/">
+        广告系统
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>技术栈：</p>
+<ul>
+<li>java 1.8</li>
+<li>mysql 8.0</li>
+<li>springcloud：Eureka（用于服务注册和服务发现，微服务中服务治理的功能）；Zuul（服务网关，用于统一应用入口，实现请求分发）；Feign（声明式的服务调用）</li>
+<li>Kafka 2.1.0：分布式消息队列，高性能，横向扩展，部署简单<ul>
+<li>安装和使用，术语解释，原生 API</li>
+</ul>
+</li>
+</ul>
+<p>不着急编码，搞清楚广告思想<br>主动思考<br>直接将之应用于自己的项目中</p>
+<h2 id="广告系统概览和准备工作"><a href="#广告系统概览和准备工作" class="headerlink" title="广告系统概览和准备工作"></a>广告系统概览和准备工作</h2><h3 id="实现了什么样的功能"><a href="#实现了什么样的功能" class="headerlink" title="实现了什么样的功能"></a>实现了什么样的功能</h3><ul>
+<li><p>广告主的广告投放</p>
+<ul>
+<li>推广计划，推广单元</li>
+</ul>
+</li>
+<li><p>媒体方的广告曝光：能展示广告的媒介</p>
+<ul>
+<li>CPM：千次收费</li>
+<li>CPT：按时间段收费</li>
+<li>CPC：点击类的竞价广告</li>
+</ul>
+</li>
+</ul>
+<h3 id="一个完整的广告系统包含哪些子系统"><a href="#一个完整的广告系统包含哪些子系统" class="headerlink" title="一个完整的广告系统包含哪些子系统"></a>一个完整的广告系统包含哪些子系统</h3><ul>
+<li><p>广告投放系统：最前端（对应广告主）</p>
+</li>
+<li><p>广告检索系统：最核心</p>
+</li>
+<li><p>曝光检测系统</p>
+<ul>
+<li>本身的曝光</li>
+<li>广告主不信任，请第三方来做检测</li>
+</ul>
+</li>
+<li><p>扣费系统：实时监 测广告的曝光，来对费用进行管理</p>
+</li>
+<li><p>报表系统</p>
+</li>
+</ul>
+<h3 id="如何扩展"><a href="#如何扩展" class="headerlink" title="如何扩展"></a>如何扩展</h3><ul>
+<li>更多的纬度（获取广告的 feature 条件）：地域，兴趣</li>
+<li>用户画像：对用户本身的兴趣点，根据兴趣点进行投放</li>
+<li>AI：智能检索引擎</li>
+</ul>
+<h3 id="广告系统的架构"><a href="#广告系统的架构" class="headerlink" title="广告系统的架构"></a>广告系统的架构</h3><ul>
+<li>全量索引：首先读取的静态类型的索引数据</li>
+<li>增量索引：运行过程中，对广告数据的改变</li>
+</ul>
+<h2 id="广告系统骨架开发"><a href="#广告系统骨架开发" class="headerlink" title="广告系统骨架开发"></a>广告系统骨架开发</h2><h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><p><strong>多模块聚合</strong></p>
+<ul>
+<li>父模块使用 models 进行聚合</li>
+<li>父模块统一管理依赖包：使用 dependencymanagement 标签，进行管理版本号</li>
+<li>子模块需要自 pom 中声明父模块，使用 parent</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-秒杀系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="秒杀系统特点"><a href="#秒杀系统特点" class="headerlink" title="秒杀系统特点"></a>秒杀系统特点</h3><ul>
+<li>读多写少：缓存</li>
+<li>高并发：缓存，限流（令牌桶，漏斗 ），负载均衡（集群），异步，队列</li>
+<li>资源冲突：<br>原子操作（不会被其他线程中断）（分布式集群的 jvm 锁不可以解决集群环境）<br>异步</li>
+</ul>
+<p>原子操作：共用</p>
+<ul>
+<li>数据库锁：乐观锁，悲观锁</li>
+<li>分布式锁：redis，zk</li>
+<li>其他原子操作：redis desc</li>
+</ul>
+<p>集群：数据一致性，tomcat 集群后连的同一套数据库</p>
+<h3 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h3><p>带宽</p>
+<h4 id="应用层（常见产品：浏览器-x2F-APP）"><a href="#应用层（常见产品：浏览器-x2F-APP）" class="headerlink" title="应用层（常见产品：浏览器&#x2F;APP）"></a>应用层（常见产品：浏览器&#x2F;APP）</h4><p>浏览器缓存，本地缓存，按钮控制，图形验证码</p>
+<p>（为了限制不必要的流量）</p>
+<h4 id="网络层（网络路由）"><a href="#网络层（网络路由）" class="headerlink" title="网络层（网络路由）"></a>网络层（网络路由）</h4><p>CDN（超大并发秒杀很有必要）</p>
+<h4 id="负载层（nginx）"><a href="#负载层（nginx）" class="headerlink" title="负载层（nginx）"></a>负载层（nginx）</h4><p>nginx，负载均衡，动静分离，反响代理，限流</p>
+<h4 id="服务层（Java-应用）"><a href="#服务层（Java-应用）" class="headerlink" title="服务层（Java 应用）"></a>服务层（Java 应用）</h4><p>动态页面静态化（用作缓存），应用缓存，分布式缓存，异步，队列，限流（代码中），原子操作保障（分布式锁，redis 集群）</p>
+<h4 id="数据库层（mysql）"><a href="#数据库层（mysql）" class="headerlink" title="数据库层（mysql）"></a>数据库层（mysql）</h4><p>原子操作保障（乐观锁，悲观锁）</p>
+<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h3><p>计算秒杀的人群和规模，确定一个最终的技术选型以及服务器容量。</p>
+<h4 id="用户终端"><a href="#用户终端" class="headerlink" title="用户终端"></a>用户终端</h4><ul>
+<li>缓存（静态流量：CSS）</li>
+<li>图形验证码（垃圾流量：防止机器人刷单）</li>
+<li>按钮（多余流量）</li>
+</ul>
+<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>部署静态资源</p>
+<h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><ul>
+<li>动静分离，静态资源可以做缓存</li>
+<li>限流（依赖漏斗）<br>new Thread(new Request()).start;<br>countDownLatch.countDown();</li>
+</ul>
+<h5 id="限流算法"><a href="#限流算法" class="headerlink" title="限流算法"></a>限流算法</h5><p>令牌桶：按照固定的速度放令牌，填满则丢弃令牌，拿到令牌的人可以进入系统</p>
+<p>漏斗：按照固定的速度漏水</p>
+<p>conf:limit_req_zone，可以针对远程 ip 地址进行限流</p>
+<p>容量设置为 8，可以成功 9 个，因为第一个不阻塞，直接透过去了。</p>
+<ul>
+<li>负载均衡：进入下一个</li>
+</ul>
+<h4 id="分布式限流"><a href="#分布式限流" class="headerlink" title="分布式限流"></a>分布式限流</h4><p>令牌桶：大小一般根据商品数量来限制的，可以略为大于秒杀数量）：进入我们的 tomcat 服务器</p>
+<h4 id="tomcat-集群"><a href="#tomcat-集群" class="headerlink" title="tomcat 集群"></a>tomcat 集群</h4><p>tomcat</p>
+<p>如果没有分布式限流，那么有</p>
+<ul>
+<li>限流：java 的令牌桶限流算法</li>
+<li>队列：只有 10 个，其余抛出异常</li>
+<li>队列 MQ：可以在 tomcat 之前加一层 MQ，然后 MQ 通知数据库一个一个扣。</li>
+</ul>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><p>乐观锁，悲观锁直接扣库存</p>
+<p>或者 tomcat redis 直接扣</p>
+<h4 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h4><p>线程 A</p>
+<p>select version，counts from goods where id&#x3D;#id#：0，100<br>update goods set count&#x3D;count-1,version&#x3D;version+1 where id&#x3D;#id# and version&#x3D;#version#<br>commit</p>
+<p>线程 B</p>
+<p>select version，counts from goods where id&#x3D;#id#：0，100<br>update goods set count&#x3D;count-1,version&#x3D;version+1 where id&#x3D;#id# and version&#x3D;#version#<br>commit</p>
+<h4 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h4><p>select * from goods id&#x3D;#id# for update</p>
+<p>高并发下悲观锁效率更高，因为乐观锁一直失败，一直 for 自旋重试，知道更新成功为止</p>
+<p>读多写少：乐观锁<br>高并发：悲观锁，效率高</p>
 
       
     </div>
@@ -215,6 +685,711 @@
 
 
   
+    <article id="post-限制运算符的算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E9%99%90%E5%88%B6%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E7%AE%97%E6%B3%95/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/%E9%99%90%E5%88%B6%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E7%AE%97%E6%B3%95/">
+        LeetCode回溯法经典题目
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="求-1-2-3-…-n"><a href="#求-1-2-3-…-n" class="headerlink" title="求 1+2+3+…+n"></a>求 1+2+3+…+n</h3><p>求 1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case 等关键字及条件判断语句（A?B:C）。</p>
+<p>采用了&amp;&amp;来进行流程控制</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">Sum_Solution</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> n;</span><br><span class="line">    <span class="type">boolean</span> flag=(ans!=<span class="number">0</span>) &amp;&amp; ((ans += Sum_Solution(n - <span class="number">1</span>))!=<span class="number">0</span>);<span class="comment">//注意java中不能强转boolean</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="不用加减乘除做加法"><a href="#不用加减乘除做加法" class="headerlink" title="不用加减乘除做加法"></a>不用加减乘除做加法</h3><p>写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、&#x2F;四则运算符号。</p>
+<p>原理是两数相加，可以转化为位运算的异或，进位是与运算。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">Add</span><span class="params">(<span class="type">int</span> num1,<span class="type">int</span> num2)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span>(num2!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> temp=num1^num2;</span><br><span class="line">        num2=(num1&amp;num2)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">        num1=temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二进制中-1-的个数"><a href="#二进制中-1-的个数" class="headerlink" title="二进制中 1 的个数"></a>二进制中 1 的个数</h3><p>输入一个整数，输出该数二进制表示中 1 的个数。其中负数用补码表示</p>
+<p>注意：关键点是消除原来 n 中的 1，然后判断是否还有 1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">NumberOf1</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n!=<span class="number">0</span>)&#123;</span><br><span class="line">        n=n&amp;(n-<span class="number">1</span>);</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组中重复的数字"><a href="#数组中重复的数字" class="headerlink" title="数组中重复的数字"></a>数组中重复的数字</h3><p>在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为 7 的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字 2。</p>
+<h4 id="空间复杂度-O（n）"><a href="#空间复杂度-O（n）" class="headerlink" title="空间复杂度 O（n）"></a>空间复杂度 O（n）</h4><p>可以用一个 boolean 数组来进行标记，如果已经被用过了，那么就重复了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">duplicate</span><span class="params">(<span class="type">int</span> numbers[],<span class="type">int</span> length,<span class="type">int</span> [] duplication)</span> &#123;</span><br><span class="line">    <span class="type">boolean</span>[] flag=<span class="keyword">new</span> <span class="title class_">boolean</span>[length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(flag[numbers[i]])&#123;</span><br><span class="line">            duplication[<span class="number">0</span>]=numbers[i];</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        flag[numbers[i]]=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="空间复杂度-O（1）"><a href="#空间复杂度-O（1）" class="headerlink" title="空间复杂度 O（1）"></a>空间复杂度 O（1）</h4><p>在原来的数组上进行标记，注意临界条件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">duplicate</span><span class="params">(<span class="type">int</span> numbers[],<span class="type">int</span> length,<span class="type">int</span> [] duplication)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        <span class="type">int</span> index=numbers[i];</span><br><span class="line">        <span class="keyword">if</span>(index&lt;<span class="number">0</span>) index+=length;</span><br><span class="line">        <span class="keyword">if</span>(numbers[index]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            duplication[<span class="number">0</span>]=index;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        numbers[index]=numbers[index]-length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/offer/" rel="tag">offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">运算符</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Restful学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Restful%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/Restful%E5%AD%A6%E4%B9%A0/">
+        Restful学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RESTful-学习"><a href="#RESTful-学习" class="headerlink" title="RESTful 学习"></a>RESTful 学习</h1><h2 id="Restful-是什么"><a href="#Restful-是什么" class="headerlink" title="Restful 是什么"></a>Restful 是什么</h2><p>本质：一种软件架构风格</p>
+<p>核心：面向资源</p>
+<p>解决问题：降低复杂性，提高系统的可伸缩性</p>
+<p>设计概念和准则：</p>
+<ul>
+<li>网络上的所有事物都可以被抽象为资源</li>
+<li>每一个资源都有唯一的资源标识，对资源的操作不会改变这些标识。删除资源，标识还在，资源不在了</li>
+<li>所有的操作都是无状态的</li>
+</ul>
+<p>什么是资源？<br>网络上的任何东西</p>
+<h2 id="为什么要使用-Restful"><a href="#为什么要使用-Restful" class="headerlink" title="为什么要使用 Restful"></a>为什么要使用 Restful</h2><h3 id="Restful-中-HTTP-协议介绍"><a href="#Restful-中-HTTP-协议介绍" class="headerlink" title="Restful 中 HTTP 协议介绍"></a>Restful 中 HTTP 协议介绍</h3><p>restful 与 http 无关，但是常用基于 http 协议的一种实现。</p>
+<h4 id="HTTP-协议-URL"><a href="#HTTP-协议-URL" class="headerlink" title="HTTP 协议-URL"></a>HTTP 协议-URL</h4><p>应用层协议，简捷快速</p>
+<pre><code>schema://host[:port]/path [?query-string][#anchor]
+</code></pre>
+<ul>
+<li>schema：底层使用的协议，如 http，https，ftp</li>
+<li>host：端口或者域名</li>
+<li>port：http 默认 80，https 默认 443</li>
+<li>path：资源路径</li>
+<li>query-string：发送给 http 服务器的数据</li>
+<li>anchor：锚。？？</li>
+</ul>
+<h4 id="HTTP-请求"><a href="#HTTP-请求" class="headerlink" title="HTTP-请求"></a>HTTP-请求</h4><p>请求行、消息报头、正文</p>
+<ul>
+<li>GET：请求资源</li>
+<li>POST：在标识的资源后附加新的数据</li>
+<li>HEAD：请求资源的响应消息报头。比如资源的创建时间和最后修改时间</li>
+<li>PUT：更新资源</li>
+<li>DELETE：请求删除标识资源</li>
+<li>OPTIONS：查询服务器的性能，或者与资源相关的选项和需求。比如说可以获得的哪些服务</li>
+</ul>
+<h4 id="HTTP-响应"><a href="#HTTP-响应" class="headerlink" title="HTTP-响应"></a>HTTP-响应</h4><p>状态行、消息报头、响应正文</p>
+<p>响应状态码</p>
+<ul>
+<li>200，OK，成功返回用户请求数据</li>
+<li>201 CREATED，新建或修改数据成功</li>
+<li>204 NO CONTENT，删除数据成功</li>
+<li>400，Bad Request，语法错误</li>
+<li>401，Unauthorized，表示用户没有认证，无法进行当前操作</li>
+<li>403 Forbidden，表示用户访问是被禁止的</li>
+<li>404，资源不存在</li>
+<li>422，创建一个对象时，发生一个验证错误。比如用户需要提供用户名和密码，但前端只提供了用户名，这个时候就返回 422</li>
+<li>500，服务器内部错误，用户无法判断发出的请求是否成功</li>
+<li>503，服务器当前不能处理请求，比如性能到瓶颈了</li>
+</ul>
+<h3 id="RESRful-和其他的区别"><a href="#RESRful-和其他的区别" class="headerlink" title="RESRful 和其他的区别"></a>RESRful 和其他的区别</h3><ul>
+<li>SOAP WebService<br>也是一种基于 http，采用 XML 格式进行封装，增加了特定的 http 消息头。更安全</li>
+</ul>
+<p>restful 最大程度的利用了 http</p>
+<h2 id="如何使用-RESTful-API"><a href="#如何使用-RESTful-API" class="headerlink" title="如何使用 RESTful API"></a>如何使用 RESTful API</h2><h3 id="RESTful-API-设计要素"><a href="#RESTful-API-设计要素" class="headerlink" title="RESTful API 设计要素"></a>RESTful API 设计要素</h3><ul>
+<li>资源路径（URI）</li>
+<li>HTTP 动词</li>
+<li>过滤信息</li>
+<li>状态码</li>
+<li>错误处理</li>
+<li>返回结果</li>
+</ul>
+<h4 id="资源路径"><a href="#资源路径" class="headerlink" title="资源路径"></a>资源路径</h4><ul>
+<li>用名词而不是动词，用复数</li>
+</ul>
+<p>例子：<br>有一个 API 体哦给你 zoo 的信息，还包括各种动物和员工信息</p>
+<pre><code>    https://api.example.com/v1/zoos
+    https://api.example.com/v1/animals
+</code></pre>
+<p>如上，v1 代表 uri 的版本号。两种方式，在 url 中加入版本，或者在 http 请求头。</p>
+<h4 id="HTTP-动词"><a href="#HTTP-动词" class="headerlink" title="HTTP 动词"></a>HTTP 动词</h4><ul>
+<li>POST &#x2F;zoos: 新建一个动物园</li>
+<li>GET &#x2F;zoos&#x2F;ID：获取某个指定动物园的信息</li>
+<li>PUT &#x2F;zoos&#x2F;ID：更新某个指定动物园的信息</li>
+<li>DELETE &#x2F;zoos&#x2F;ID：删除某个动物园</li>
+</ul>
+<h4 id="过滤信息"><a href="#过滤信息" class="headerlink" title="过滤信息"></a>过滤信息</h4><p>用户自己设置的，需要什么信息，多少信息</p>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><p>如果状态码是 4XX 或者 5XX，就应该返回出错信息。</p>
+<p>用键值对返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;error&quot;</span>:<span class="string">&quot;参数错误&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回结果"><a href="#返回结果" class="headerlink" title="返回结果"></a>返回结果</h4><ul>
+<li>GET &#x2F;collections：返回资源对象的列表（数组）</li>
+<li>GET &#x2F;collections&#x2F;identity：返回单个资源对象（没有就 404）</li>
+<li>POST &#x2F;collections：返回新生成的资源对象</li>
+<li>PUT &#x2F;collections&#x2F;identity：返回完整的资源对象</li>
+<li>PATCH &#x2F;collections&#x2F;identity：返回被修改的属性</li>
+<li>DELETE &#x2F;collections&#x2F;identity：返回一个空文档（204）</li>
+</ul>
+<h3 id="确认设计要素"><a href="#确认设计要素" class="headerlink" title="确认设计要素"></a>确认设计要素</h3><ul>
+<li><p>用户登录、注册</p>
+</li>
+<li><p>文章发表、编辑、管理、列表</p>
+</li>
+<li><p>用户注册：<br>email 为空<br>用户名为空<br>密码为空</p>
+<p>检测 email 重复<br>然后写入数据库，password 加密<br>注册失败<br>返回用户信息：user_id,user_name,email,figure。删除密码字段</p>
+</li>
+<li><p>用户登录：<br>email 为空<br>password 为空<br>返回用户信息：user_id,user_name,email,figure。删除密码字段</p>
+</li>
+</ul>
+<p>错误码定义在一个文件里面</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Restful/" rel="tag">Restful</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Maven学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Maven%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/Maven%E5%AD%A6%E4%B9%A0/">
+        Maven学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Maven-学习"><a href="#Maven-学习" class="headerlink" title="Maven 学习"></a>Maven 学习</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>清理，编译，测试，运行，打包，集成测试，验证，部署整个周期</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>groupId：（公司反写网址.项目名）【主项目的标识，实际的项目】</li>
+<li>artiFactId：（项目名-模块名）【maven 的项目和我们的实际的项目不一样，maven 是模块化的，一个实际的项目被划分为多个模块。一个模块的标识】</li>
+<li>version：【当前版本号，一般三个数字组成。第一个 0 表示大版本号，第二个 0 表示分支版本号，第三个 0 表示小版本号】<br>snapshot 快照<br>alpha 内部测试<br>beta 公测<br>Release 稳定<br>GA 正式发布</li>
+<li>packaging：【maven 项目的打包方式，默认是 jar，还可以其他的 war，zip，pom 等等】</li>
+</ul>
+<h2 id="maven-常用的构建命令"><a href="#maven-常用的构建命令" class="headerlink" title="maven 常用的构建命令"></a>maven 常用的构建命令</h2><blockquote>
+<p>mvn -v<br>mvn compile：编译<br>mvn test：测试<br>mvn package：打包</p>
+</blockquote>
+<blockquote>
+<p>mvn clean ：删除 target<br>mvn install：安装 jar 包到本地仓库，一般是将自己 compile 的 jar 包加入到本地仓库中，也就是如果一个项目用到另一个项目中的文件，我们可以这样使用</p>
+</blockquote>
+<h2 id="自动创建目录骨架"><a href="#自动创建目录骨架" class="headerlink" title="自动创建目录骨架"></a>自动创建目录骨架</h2><p>mvn archetype:generate -DgroupId&#x3D;top.wuxiya.maven04 -DartifactId&#x3D;maven04-demo -Dversion&#x3D;1.0.0SNAPSHOT -Dpackage&#x3D;top.wuxiya.maven04-demo</p>
+<h2 id="坐标和仓库"><a href="#坐标和仓库" class="headerlink" title="坐标和仓库"></a>坐标和仓库</h2><p>坐标是地址，用于找到对应的 jar 包，也就是 dependence</p>
+<p>包括：groupId,artiFactId,version</p>
+<p>仓库：本地和远程</p>
+<h2 id="maven-声明周期"><a href="#maven-声明周期" class="headerlink" title="maven 声明周期"></a>maven 声明周期</h2><p>每个证明周期是相互独立的，每个周期的内部有一定的依赖和顺序，运行之后的命令，自动执行之前的依赖</p>
+<p><strong>clean</strong> 清理项目 分为三个阶段：</p>
+<blockquote>
+<p>pre-clean 执行清理前的工作<br>clean 清理上一次构建生成的所有文件<br>post-clean 执行清理后的文件</p>
+</blockquote>
+<p><strong>default</strong> 构建项目</p>
+<blockquote>
+<p>compile test package install</p>
+</blockquote>
+<p><strong>site</strong> 生成项目站点，根据 pom</p>
+<blockquote>
+<p>pre-site 之前的工作<br>site 生成项目的站点文档<br>post-site 生成之后的工作<br>site-deploy 发布生成的站点到服务器上</p>
+</blockquote>
+<p>对于 maven 而言，所有的命令都是调用插件来使用的</p>
+<h2 id="pom-xml-常用元素介绍"><a href="#pom-xml-常用元素介绍" class="headerlink" title="pom.xml 常用元素介绍"></a>pom.xml 常用元素介绍</h2><ul>
+<li><p><project>：根元素，包含了一些约束信息</p>
+</li>
+<li><p><modelVersion>：指定了 pom 的版本，固定的 4.0.0</p>
+</li>
+<li><p>坐标信息：</p>
+</li>
+<li><p>项目坐标信息：<groupId>，<artiFactId>，<version>，<packaging></p>
+</li>
+<li><p><name>：项目的描述名，一般在产生项目文档的时候使用</p>
+</li>
+<li><p><url>：项目的地址</p>
+</li>
+<li><p><description>：项目的描述</p>
+</li>
+<li><p><developers>：开发人员的列表</p>
+</li>
+<li><p><licenses>：开源框架的许可证信息</p>
+</li>
+<li><p><organization>：组织信息</p>
+</li>
+<li><p><dependencies>：依赖列表 &gt; <dependence>：<br>依赖包的坐标信息:<groupId>，<artiFactId>，<version>；<br><type>；<br><scope>：依赖的范围，如 test，表示只在测试的范围有用；<optional>：true&#x2F;false，用来设置依赖是否可选，默认是 false；<br><exclusions>：排除依赖传递列表 &gt; <exclusion>：A-&gt;B-&gt;C，那么 C 对于 A 来说就是传递依赖</p>
+</li>
+<li><p><dependencyManagement>：依赖的管理 &gt; <dependencies> &gt; <dependency> （并不会运行，而是用于子模块的继承）</p>
+</li>
+<li><p><build> &gt; <plugins> 插件信息 &gt; <plugin> &gt; 坐标信息</p>
+</li>
+<li><p><parent>：用于在子模块中对于父模块的继承</p>
+</li>
+<li><p><modules>：用于聚合多个 maven 项目，如果我们有很多个 maven 模块，那么可以一次性编译，而不是一个一个编译</p>
+</li>
+</ul>
+<h2 id="依赖的范围"><a href="#依赖的范围" class="headerlink" title="依赖的范围"></a>依赖的范围</h2><p>重点来看<dependency> &gt; <scope>。<br>如果要使用某一个框架，需要将框架加入到 classPath 中，这样就可以使用该框架。</p>
+<p>maven 中有三种 classpath，分别是 <strong>编译，测试，运行</strong>。<br>junit 只存在于 test 的范围。</p>
+<p>由此可见范围是用于管理依赖包的使用范围。</p>
+<ul>
+<li>compile：默认，三种都有效</li>
+<li>provided：测试和编译，如发布的时候容器里面已经有 API 了</li>
+<li>runtime：测试和运行，JDBC 的应用</li>
+<li>test：junit 的应用</li>
+<li>system：</li>
+<li>import：只在 management 中使用</li>
+</ul>
+<h2 id="依赖的传递"><a href="#依赖的传递" class="headerlink" title="依赖的传递"></a>依赖的传递</h2><p>A-&gt;B-&gt;C</p>
+<p>如果 A 引入 B 的 jar 包，那么会默认导入 C 包，这个时候如果不需要 C 包，我们在<dependences> &gt; <dependency>B 中，加入<exclusions>：排除依赖传递列表 &gt; <exclusion>：C 的坐标</p>
+<h2 id="依赖冲突"><a href="#依赖冲突" class="headerlink" title="依赖冲突"></a>依赖冲突</h2><p>如果 A 依赖了同一个构件的不同版本，那么会产生冲突</p>
+<ul>
+<li>短路优先：优先解析路径段的版本<br>A-&gt;B-&gt;C-&gt;X(jar)<br>A-&gt;D-&gt;X(jar)<br>那么优先解析短的路径</li>
+<li>路径相同，优先解析先声明的版本</li>
+</ul>
+<h2 id="聚合和继承"><a href="#聚合和继承" class="headerlink" title="聚合和继承"></a>聚合和继承</h2><p><strong>聚合</strong></p>
+<p>对于不同的 maven 项目，我们需要相互调用的时候必须一个一个 install 到本地的仓库中才可以调用。</p>
+<p>我们可以将不同的 maven 项目聚合一次性运行。</p>
+<p>新建一个 maven 项目，packaging 用 pom，用<modules>：用于聚合多个 maven 项目，如果我们有很多个 maven 模块，那么可以一次性编译，而不是一个一个编译。</p>
+<p><strong>继承</strong><br>新建一个 maven 项目，packaging 用 pom，删除 main 和 test，依赖放在 manegement 中。</p>
+<p>在子项目中，<parent>中引入父亲</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Spring Boot 学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Spring%20Boot%20%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/Spring%20Boot%20%E5%AD%A6%E4%B9%A0/">
+        Spring Boot学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Spring-Boot-特点"><a href="#Spring-Boot-特点" class="headerlink" title="Spring Boot 特点"></a>Spring Boot 特点</h2><ul>
+<li>是 Spring MVC 的升级版，没有必然的联系</li>
+<li>简化配置，编码，部署，监控</li>
+<li>是下一代框架</li>
+<li>入门级微框架，学习 SpringCloud 必须学会 SpringBoot，SpringCloud 建立在 boot 的基础之上</li>
+<li>学习 maven，Spring 的注解，restful API</li>
+</ul>
+<h3 id="属性配置"><a href="#属性配置" class="headerlink" title="属性配置"></a>属性配置</h3><p>两种配置方式，properties 和 yml。<br>yml 树状结构，对中文支持更好。</p>
+<p><strong>Server</strong></p>
+<ul>
+<li>port：默认 8080</li>
+<li>context-path：给路径加上前缀</li>
+</ul>
+<p><strong>自定义单项配置</strong></p>
+<p>在配置文件中写：</p>
+<pre><code>    name: sherlock
+</code></pre>
+<p>在 java 文件中用：声明 String 或者 Integer 就可以自动转</p>
+<pre><code>    @Value(&quot;$&#123;name&#125;&quot;)
+</code></pre>
+<p>在配置文件中使用配置文件：</p>
+<pre><code>    content：“name:$&#123;name&#125;,age$&#123;age&#125;”
+</code></pre>
+<p><strong>多项配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person:</span><br><span class="line">    name: sherlock</span><br><span class="line">    age: 18</span><br></pre></td></tr></table></figure>
+
+<p>新建一个类，用@ConfigurationProperties(prefix&#x3D;”person”)获取前缀是 person 的配置。注意@Component 成为 Bean。</p>
+<p>创建私有属性 name ,age ，get 和 set 等</p>
+<p>此时在使用的时候就不用@Value(“${name}”)了，直接@Autowired，将新建的类自动导入即可。</p>
+<p><strong>生产和上线不同的环境</strong></p>
+<p>新建两个 yml 文件：application-dev.yml 和 application-prod.yml。</p>
+<p>在 application.yml 中配置：dev 或者 prod</p>
+<pre><code>    spring.profiles.active：dev
+</code></pre>
+<p>注意：在用命令行启动 jar 文件的时候，我们可以指定生产环境如下：</p>
+<pre><code>    java -jar target/*.jar --spring.profiles.active=prod
+</code></pre>
+<p>注意在 application.yml 中进行的配置，两个环境都可以使用</p>
+<h3 id="Controller-的使用"><a href="#Controller-的使用" class="headerlink" title="Controller 的使用"></a>Controller 的使用</h3><h4 id="映射-URL"><a href="#映射-URL" class="headerlink" title="映射 URL"></a>映射 URL</h4><p>用来接收用户端的请求</p>
+<ul>
+<li>@Controller：处理 http 请求。返回页面，配合模板来使用</li>
+<li>@RestController：是@Controller+@ResponseBody。返回 json。【推荐使用】</li>
+<li>@RequestMapping：配置 url 映射</li>
+</ul>
+<p>使用方式：</p>
+<ul>
+<li>可以给整个类指定 url，用@RequestMapping 再给方法指定 url</li>
+<li>url 可以是 json 模式{“&#x2F;“,”&#x2F;“}</li>
+<li>get 可以从 url 进行测试，测试 post 的时候，可以用 postman 来进行尝试</li>
+</ul>
+<h4 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h4><ul>
+<li>@PathVariable</li>
+<li>@RequestParam</li>
+</ul>
+<p>@<strong>PathVariable</strong><br>整个 url 非常的简洁</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">value=<span class="string">&quot;/&#123;id&#125;/path&quot;</span></span><br><span class="line"></span><br><span class="line">func(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@<strong>RequestParam</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">value=<span class="string">&quot;/path&quot;</span></span><br><span class="line"></span><br><span class="line">func(<span class="meta">@RequestParam(&quot;id&quot;)</span> Integer myId)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//设置默认值</span></span><br><span class="line">func(<span class="meta">@RequestParam(value=&quot;id&quot;,required=false,defaultValue=&quot;0&quot;)</span> Integer myId)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>Spring-Data-Jpa<br>JPA（Java Persistence API）：定义了一系列对象持久化的标准。</p>
+<ul>
+<li><dl><dt>jpa.hibernate.ddl-auto: create(运行的时候创建一张新的表)</dt><dd>update (第一次运行的时候创建一张表，如果有数据会保留)，常用<br>：create-drop(应用停下来了，会删掉表)<br>：validate(验证数据库中和你的表是否一致)</dd></dl></li>
+<li><p>jpa.show-sql: true</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity(这个是将这个类映射为数据库中的一张表)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span></span><br><span class="line"><span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建表的实体，如上的 @Entity</li>
+<li>创建实体的 reposity</li>
+<li>创建 service，内嵌 reposity，对数据库的接口，进行再次包装</li>
+<li>创建 controller，构建 url，解析参数</li>
+</ol>
+<h4 id="Restful-接口"><a href="#Restful-接口" class="headerlink" title="Restful 接口"></a>Restful 接口</h4><ul>
+<li>get</li>
+<li>post：新加入</li>
+<li>put：更新，传入 id</li>
+<li>delete：删除</li>
+</ul>
+<h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><p>希望两条数据同时插入，要不然都不成功</p>
+<ul>
+<li><p>@Transactional：在 Service 中的方法上面加入@Transactional，事务注解，表示这个方法内的多条数据，或者一条数据如果失败，那么就回退。只有查询的时候不需要加入事务操作。</p>
+</li>
+<li><p>@Test<br>@Transactional<br>连在一起使用，可以达到回滚的目的？？也就是只用于测试，不真正的向数据库中插入</p>
+</li>
+</ul>
+<h1 id="web-进阶"><a href="#web-进阶" class="headerlink" title="web 进阶"></a>web 进阶</h1><p>还需要学习</p>
+<ul>
+<li>@Valid 表单验证</li>
+<li>AOP 处理请求</li>
+<li>AOP 统一异常处理</li>
+<li>单元测试</li>
+</ul>
+<p>待了解</p>
+<ul>
+<li>spring-data-jpa：关系型数据库</li>
+<li>JdbcTemplate</li>
+<li>Mybatis</li>
+<li>redis+MongoDB：nosql 数据库</li>
+<li>用缓存应对高并发</li>
+</ul>
+<h2 id="Valid-表单验证"><a href="#Valid-表单验证" class="headerlink" title="@Valid 表单验证"></a>@Valid 表单验证</h2><p>@Valid 和@BindingResult 一大利器</p>
+<h2 id="AOP-统一处理请求日志"><a href="#AOP-统一处理请求日志" class="headerlink" title="AOP 统一处理请求日志"></a>AOP 统一处理请求日志</h2><h3 id="AOP-是一种程序的设计思想"><a href="#AOP-是一种程序的设计思想" class="headerlink" title="AOP 是一种程序的设计思想"></a>AOP 是一种程序的设计思想</h3><p>POP：面向过程<br>OOP：面向对象<br>AOP：面向切面</p>
+<p>将通用逻辑从业务逻辑中分出来</p>
+<ul>
+<li>增加 aop 的依赖</li>
+<li>增加处理文件 aspect</li>
+</ul>
+<p>面向切面编程，增加 url 的切点，在之前和之后进行处理验证</p>
+<p>@Slf4j：类注解，处理日志</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Pointcut(&quot;execution(public * edu.fudan.advancedweb.web3d.controller.UserController.findById(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">log</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Before(&quot;log()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doBefore</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@After(&quot;log()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doAfter</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;2222&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@AfterReturning(returning &#x3D; “object”, pointcut &#x3D; “log()”)：返回之后的对象</li>
+</ul>
+<h3 id="统一异常处理"><a href="#统一异常处理" class="headerlink" title="统一异常处理"></a>统一异常处理</h3><p>将返回的信息进行包装，成为：code，msg，data</p>
+<p>Spring 只对 RuntimeException，</p>
+<p>当我们需要修改返回的 error 的 httpstatus 时，注意，有时候会出现自定义的错误，但是 status 为 200，只需要在一行的捕获下面，加上@ResponseStatus(HttpStatus.***)可。</p>
+<h1 id="项目优化"><a href="#项目优化" class="headerlink" title="项目优化"></a>项目优化</h1><h2 id="ab-压测模拟并发"><a href="#ab-压测模拟并发" class="headerlink" title="ab 压测模拟并发"></a>ab 压测模拟并发</h2><p>用 Apache 进行压测</p>
+<ul>
+<li><p>ab -n 100 -c 100 url(-n 表示 100 个请求，-c 表示 100 个并发。相当于 100 个人同时进行请求)</p>
+</li>
+<li><p>-t 60。表示 60s 内不停地模拟</p>
+</li>
+<li><p>使用 synchronized：解决了问题，降低了性能。数据安全是第一位。</p>
+</li>
+<li><p>无法做得到细粒度的控制</p>
+</li>
+<li><p>只适合单点的情况</p>
+</li>
+</ul>
+<h2 id="redis-分布式锁"><a href="#redis-分布式锁" class="headerlink" title="redis 分布式锁"></a>redis 分布式锁</h2><ul>
+<li><p>setnx：set if not exist，不成立的时候来建立锁</p>
+</li>
+<li><p>getset：先 get，再次 set。返回原来的值，设置新的值。</p>
+</li>
+<li><p>支持高可用，分布式集群</p>
+</li>
+<li><p>更细粒度的锁</p>
+</li>
+<li><p>多台机器上多个进程对一个数据进行操作的互斥</p>
+</li>
+<li><p>他可以做分布式锁一个重要原因是它是单线程的</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">lock</span><span class="params">(String key, String value)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//已经加锁成功了</span></span><br><span class="line">    <span class="keyword">if</span> (redisTemplate.opsForValue().setIfAbsent(key, value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">currentValue</span> <span class="operator">=</span> redisTemplate.opsForValue().get(key);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果过期。这段代码就是CAS，乐观锁的实现。解决的是两个线程同时进入</span></span><br><span class="line">    <span class="comment">//的情况。</span></span><br><span class="line">    <span class="keyword">if</span> (!StringUtils.isEmpty(currentValue) &amp;&amp; Long.parseLong(currentValue) &lt; System.currentTimeMillis()) &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">oldValue</span> <span class="operator">=</span> redisTemplate.opsForValue().getAndSet(key, value);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取上一个锁的时间</span></span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.isEmpty(oldValue) &amp;&amp; oldValue.equals(currentValue)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">unlock</span><span class="params">(String key, String value)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">currentValue</span> <span class="operator">=</span> redisTemplate.opsForValue().get(key);</span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.isEmpty(currentValue) &amp;&amp; currentValue.equals(value)) &#123;</span><br><span class="line">            redisTemplate.opsForValue().getOperations().delete(key);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        log.error(<span class="string">&quot;【redis 分布式锁】解锁异常&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-缓存"><a href="#Redis-缓存" class="headerlink" title="Redis 缓存"></a>Redis 缓存</h2><ul>
+<li>命中</li>
+<li>失效：时间到了</li>
+<li>更新</li>
+</ul>
+<p>进行缓存需要实现序列化</p>
+<ul>
+<li>@Cacheable(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>@CachePut(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>@CacheEvict(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>类上面的@CacheConfig(cacheName&#x3D;”userList”);<br>取消下面的 cacheName</li>
+</ul>
+<p>@Cacheable 中</p>
+<ul>
+<li><p>key 可以动态，key&#x3D;”#sellerId”</p>
+</li>
+<li><p>condition&#x3D;”#sellerId &gt; 30”</p>
+</li>
+<li><p>unless&#x3D;”#result.getCode()!&#x3D;0”(当返回 code 为 0 的时候，进行缓存)</p>
+</li>
+<li><p>建表用 sql，不用 JPA 建表</p>
+</li>
+<li><p>慎用@OneToMany 等，表的关系根据逻辑控制</p>
+</li>
+</ul>
+<p>mybatis：</p>
+<ul>
+<li>注解</li>
+<li>xml</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-SpringCloud" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/SpringCloud/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/25/SpringCloud/">
+        Spring Cloud学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="微服务介绍"><a href="#微服务介绍" class="headerlink" title="微服务介绍"></a>微服务介绍</h2><ul>
+<li>一系列微小的服务共同组成</li>
+<li>跑在自己的进程里</li>
+<li>每个服务为单独的业务开发</li>
+<li>独立部署</li>
+<li>分布式管理</li>
+</ul>
+<h3 id="涉及的架构形态"><a href="#涉及的架构形态" class="headerlink" title="涉及的架构形态"></a>涉及的架构形态</h3><ul>
+<li>单体架构</li>
+<li>基于 Ajax 的前后端分离</li>
+<li>分布式架构</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

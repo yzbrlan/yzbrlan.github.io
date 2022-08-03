@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Docker学习 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一些学习Docker的过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker学习">
+<meta property="og:url" content="http://example.com/2022/07/25/docker%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一些学习Docker的过程">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-07-25T10:31:00.000Z">
+<meta property="article:modified_time" content="2019-04-09T12:24:06.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="Docker入门">
+<meta property="article:tag" content="小册">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-docker学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/docker%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:00.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker学习
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker%E5%85%A5%E9%97%A8/" rel="tag">Docker入门</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E5%86%8C/" rel="tag">小册</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">技术学习笔记</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="docker-的技术实现"><a href="#docker-的技术实现" class="headerlink" title="docker 的技术实现"></a>docker 的技术实现</h2><p>命名空间，控制组（CGgroups），联合文件系统（union file system）</p>
+<ul>
+<li>CGgroups：资源的隔离,和资源的分配</li>
+</ul>
+<h2 id="docker-组成"><a href="#docker-组成" class="headerlink" title="docker 组成"></a>docker 组成</h2><p>镜像 image，容器 container，网络 network，数据卷 volume</p>
+<p>优势：利用 AUFS 对镜像进行增量更新，方便共用镜像；写时复制更快</p>
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><p>只读的文件包，包含了虚拟环境运行的最原始文件系统的内容</p>
+<h3 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h3><p>为保证数据的独立性，可以基于 docker 的 unionfs，建立独立的目录持久存放数据，或者在文件中共享；通过这几种方式实现持久化，或者数据共享，我们称之为数据卷</p>
+<h3 id="container"><a href="#container" class="headerlink" title="container"></a>container</h3><p>启动与 PID 为 1 的进程共生命；写时复制的机制，启动时，利用 unionfs 将镜像以只读的方式挂载到沙盒文件中。</p>
+<h3 id="network"><a href="#network" class="headerlink" title="network"></a>network</h3><p>容器网络模型核心组成：沙盒（Sandbox），网络（Network），端点（Endpoint）</p>
+<p>有五种驱动，其中两种常用 Bridge Driver,Overlay Driver</p>
+<p>Bridge，是默认网络驱动可以通过软硬件来实现网桥；Overlay 通过 Docker 集群模块来搭建，可以跨物理主机的虚拟网络。</p>
+<h2 id="docker-指令"><a href="#docker-指令" class="headerlink" title="docker 指令"></a>docker 指令</h2><blockquote>
+<p>启动 docker：sudo systemctl start docker<br>开机自启动：sudo systemctl enable docker<br>docker info</p>
+</blockquote>
+<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><blockquote>
+<p>拉取镜像：docker pull <name>(默认为 latest 版本)<br>docker images<br>docker search <a href="name:version">name:version</a><br>docker rmi <a href="name:version">name:version</a></p>
+</blockquote>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><blockquote>
+<p>创建：docker create –name <name> <a href="name:version">name:version</a><br>运行： docker start name<br>二合一： docker run -d –name <name> <a href="name:version">name:version</a>(合并指令，run 为前台，-d 转为后台运行)<br>docker rm <name>(docker 记得随用随删)<br>docker ps<br>docker ps -a<br>查看容器具体信息：docker inspect <name><br>进入容器启动 bash：docker exec -it <name> bash<br>nginx -s top&#x2F;quit(进入后停止)<br>exit(进入后退出)</p>
+</blockquote>
+<h3 id="容器网络"><a href="#容器网络" class="headerlink" title="容器网络"></a>容器网络</h3><p>(network 暴露接口)(<a target="_blank" rel="noopener" href="https://blog.csdn.net/Michaelwubo/article/details/82493006">https://blog.csdn.net/Michaelwubo/article/details/82493006</a>)</p>
+<blockquote>
+<p>–expose（暴露容器 port），EXPOSE 与-P（dockersfile 中使用），-p（指定宿主机的 port 与容器 port 的映射）<br>创建新的虚拟子网：docker network create -d <drivername> <netname>(-d 可以指定新的网络驱动，默认是 bridge)<br>docker network ls&#x2F;rm <netname>&#x2F;..<br>docker run -d –name <name> –link <othername> –network <netname> –expose <port> –expose <port> <a href="name:version">name:version</a><br>docker -d –name <name> -p <a href="port:port">port:port</a> -p <a href="port:port">port:port</a> <a href="name:version">name:version</a></p>
+</blockquote>
+<h2 id="管理存储数据"><a href="#管理存储数据" class="headerlink" title="管理存储数据"></a>管理存储数据</h2><p>数据有三种挂载方式：Bind Mount，Volume，Tmpfs Mount</p>
+<ul>
+<li>Bind Mount：指定宿主系统文件目录，以及容器内部的路径</li>
+<li>Volume：指定容器内部的路径，</li>
+<li>Tmpfs Mount：系统内存中的一部分早容器的文件系统中，并不是持久的，其中的内容会随着容器的停止而消失</li>
+</ul>
+<h3 id="Bind-Mount"><a href="#Bind-Mount" class="headerlink" title="Bind Mount"></a>Bind Mount</h3><p>必须使用绝对路径不能相对路径，默认是 RW，如果只读，加:ro</p>
+<blockquote>
+<p>docker run -d –name <name> -v <host-path>:<container-path>(:ro) <a href="name:version">name:version</a>(或者是–volume )</p>
+</blockquote>
+<p>使用的场景：</p>
+<ul>
+<li>当我们需要从宿主系统共享配置的时候</li>
+<li>把代码挂载进入容器，每次对代码的修改都可以直接在容器外部进行</li>
+</ul>
+<h3 id="Tmpfs-Mount-临时文件"><a href="#Tmpfs-Mount-临时文件" class="headerlink" title="Tmpfs Mount 临时文件"></a>Tmpfs Mount 临时文件</h3><blockquote>
+<p>docker run -d –name <name> –tmpfs <host-path> <a href="name:version">name:version</a></p>
+</blockquote>
+<h3 id="Volume-使用数据卷"><a href="#Volume-使用数据卷" class="headerlink" title="Volume 使用数据卷"></a>Volume 使用数据卷</h3><p>无需知道数据存储在了宿主的哪里，一般默认在 docker 的资源区域(&#x2F;var&#x2F;lib&#x2F;docker)</p>
+<blockquote>
+<p>docker run -d –name <name> -v (<name>:)<container-path> <a href="name:version">name:version</a></p>
+</blockquote>
+<h3 id="共用数据卷"><a href="#共用数据卷" class="headerlink" title="共用数据卷"></a>共用数据卷</h3><p>我们用-v 来挂载的时候，如果数据卷不存在，那么会创建，否则直接引用</p>
+<blockquote>
+<p>-v html:…<br>-v html:…<br>直接创建数据卷：docker volume create <name><br>docker volume ls<br>docker volume rm <name><br>删除容器的时候，加 -v 删除关联的数据卷： docker volume rm -v <containername><br>删除没有容器引用的数据卷，用 prune：docker volume prune</p>
+</blockquote>
+<h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><p>数据卷容器不需要运行，用一个系统的镜像就可以</p>
+<p>是容器间的文件系统的桥梁，可以像引用 network 一样引用,用–volumes-from 就可以</p>
+<blockquote>
+<p>docker create –name <volume-name> -v (name:)<container-path> ubuntu<br>docker run -d –name <name> –volumes-from <volume-name> <a href="name:version">name:version</a></p>
+</blockquote>
+<h3 id="迁移和备份数据卷"><a href="#迁移和备份数据卷" class="headerlink" title="迁移和备份数据卷"></a>迁移和备份数据卷</h3><p>对于临时容器，我们在 run 的时候加入 –rm，让容器在停止的时候自动删除</p>
+<blockquote>
+<p>docker run –rm –volumes-from appdata -v &#x2F;backup:&#x2F;backup ubuntu tar cvf &#x2F;backup&#x2F;backup.tar &#x2F;webapp&#x2F;storage<br>docker run –rm –volumes-from appdata -v &#x2F;backup:&#x2F;backup ubuntu tar xvf &#x2F;backup&#x2F;backup.tar -C &#x2F;webapp&#x2F;storage –strip</p>
+</blockquote>
+<h2 id="保存和共享数据"><a href="#保存和共享数据" class="headerlink" title="保存和共享数据"></a>保存和共享数据</h2><blockquote>
+<p>1、容器–&gt;提交新的镜像：docker commit -m “desc” <name> <a href="name:version">name:version</a><br>2、导出镜像，可批量：docker save <image-name> &gt; <image-name>.tar<br>docker save -o .&#x2F;<image-name>.tar <image-name><br>3、恢复镜像，可批量：docker load &lt; <image-name>.tar<br>docker load -i .&#x2F;<image-name>.tar<br>合并 1 和 2：docker export -o .&#x2F;<image-name> <container-name><br>docker import .&#x2F;<image-name> <image>(注意 load 不可以指定名称，import 可以指定名称)</p>
+</blockquote>
+<h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>使用变量：用 <ARG arg>来传参，在构建的时候传入指令<br>传入：docker build –build-arg arg&#x3D;value<br>只影响构建过程</li>
+<li>环境变量：用<ENV arg value>来指定<br>可以影响基于此镜像创建的容器，因此可以在运行容器的时候，加入&lt;-e&#x2F;–env arg&#x3D;value&gt;来覆盖环境变量，如之前的 mysql</li>
+</ul>
+<p>ARG 和 ENV 在使用的时候，采用$arg 来占位，如出现冲突，ENV 的一直都会覆盖 ARG</p>
+<h3 id="合并命令"><a href="#合并命令" class="headerlink" title="合并命令"></a>合并命令</h3><p>由于镜像是由多个镜像叠加而得，它是由 dockerfile 中的每条指令生成的，因此适度的合并 RUN 到一条指令中，会减少镜像层的数量，较少反复创建容器的次数，提高了镜像构建的速度。</p>
+<p>建议将不容易变化的搭建过程放到前面，充分利用构建缓存提高镜像构建的速度。</p>
+<p>合并指令的时候，将易变的和不易变的拆分，放到不同的指令里。</p>
+<h2 id="Docker-Compose-管理容器"><a href="#Docker-Compose-管理容器" class="headerlink" title="Docker Compose 管理容器"></a>Docker Compose 管理容器</h2><p>Dockerfile 是将容器内部运行环境的搭建固化下来，那么 Docker Compose 是将多个容器运行的方式和配置固化下来。</p>
+<p>使用步骤：</p>
+<p>1、编写容器所需要的 Dockerfile<br>2、编写配置容器的 docker-compose.yml<br>3、使用 docker-compose 命令启动</p>
+<blockquote>
+<p>启动：docker-compose -f .&#x2F;name.yml -p pj-name up -d<br>(-f 指令 yml，否则是当前目录下的 yml；-p 指定项目名字；-d 在后台)<br>删除：docker-compose down</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Linux系统管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/guns%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">guns后台系统</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

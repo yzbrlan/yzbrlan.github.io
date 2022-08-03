@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Spring Boot学习 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于学习Spring Boot的一些思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot学习">
+<meta property="og:url" content="http://example.com/2022/07/25/Spring%20Boot%20%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于学习Spring Boot的一些思考">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-07-25T10:31:02.000Z">
+<meta property="article:modified_time" content="2019-04-29T12:55:30.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="Spring Boot">
+<meta property="article:tag" content="Spring Cloud">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Spring Boot 学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Spring%20Boot%20%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring Boot学习
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="Spring-Boot-特点"><a href="#Spring-Boot-特点" class="headerlink" title="Spring Boot 特点"></a>Spring Boot 特点</h2><ul>
+<li>是 Spring MVC 的升级版，没有必然的联系</li>
+<li>简化配置，编码，部署，监控</li>
+<li>是下一代框架</li>
+<li>入门级微框架，学习 SpringCloud 必须学会 SpringBoot，SpringCloud 建立在 boot 的基础之上</li>
+<li>学习 maven，Spring 的注解，restful API</li>
+</ul>
+<h3 id="属性配置"><a href="#属性配置" class="headerlink" title="属性配置"></a>属性配置</h3><p>两种配置方式，properties 和 yml。<br>yml 树状结构，对中文支持更好。</p>
+<p><strong>Server</strong></p>
+<ul>
+<li>port：默认 8080</li>
+<li>context-path：给路径加上前缀</li>
+</ul>
+<p><strong>自定义单项配置</strong></p>
+<p>在配置文件中写：</p>
+<pre><code>    name: sherlock
+</code></pre>
+<p>在 java 文件中用：声明 String 或者 Integer 就可以自动转</p>
+<pre><code>    @Value(&quot;$&#123;name&#125;&quot;)
+</code></pre>
+<p>在配置文件中使用配置文件：</p>
+<pre><code>    content：“name:$&#123;name&#125;,age$&#123;age&#125;”
+</code></pre>
+<p><strong>多项配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person:</span><br><span class="line">    name: sherlock</span><br><span class="line">    age: 18</span><br></pre></td></tr></table></figure>
+
+<p>新建一个类，用@ConfigurationProperties(prefix&#x3D;”person”)获取前缀是 person 的配置。注意@Component 成为 Bean。</p>
+<p>创建私有属性 name ,age ，get 和 set 等</p>
+<p>此时在使用的时候就不用@Value(“${name}”)了，直接@Autowired，将新建的类自动导入即可。</p>
+<p><strong>生产和上线不同的环境</strong></p>
+<p>新建两个 yml 文件：application-dev.yml 和 application-prod.yml。</p>
+<p>在 application.yml 中配置：dev 或者 prod</p>
+<pre><code>    spring.profiles.active：dev
+</code></pre>
+<p>注意：在用命令行启动 jar 文件的时候，我们可以指定生产环境如下：</p>
+<pre><code>    java -jar target/*.jar --spring.profiles.active=prod
+</code></pre>
+<p>注意在 application.yml 中进行的配置，两个环境都可以使用</p>
+<h3 id="Controller-的使用"><a href="#Controller-的使用" class="headerlink" title="Controller 的使用"></a>Controller 的使用</h3><h4 id="映射-URL"><a href="#映射-URL" class="headerlink" title="映射 URL"></a>映射 URL</h4><p>用来接收用户端的请求</p>
+<ul>
+<li>@Controller：处理 http 请求。返回页面，配合模板来使用</li>
+<li>@RestController：是@Controller+@ResponseBody。返回 json。【推荐使用】</li>
+<li>@RequestMapping：配置 url 映射</li>
+</ul>
+<p>使用方式：</p>
+<ul>
+<li>可以给整个类指定 url，用@RequestMapping 再给方法指定 url</li>
+<li>url 可以是 json 模式{“&#x2F;“,”&#x2F;“}</li>
+<li>get 可以从 url 进行测试，测试 post 的时候，可以用 postman 来进行尝试</li>
+</ul>
+<h4 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h4><ul>
+<li>@PathVariable</li>
+<li>@RequestParam</li>
+</ul>
+<p>@<strong>PathVariable</strong><br>整个 url 非常的简洁</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">value=<span class="string">&quot;/&#123;id&#125;/path&quot;</span></span><br><span class="line"></span><br><span class="line">func(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@<strong>RequestParam</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">value=<span class="string">&quot;/path&quot;</span></span><br><span class="line"></span><br><span class="line">func(<span class="meta">@RequestParam(&quot;id&quot;)</span> Integer myId)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//设置默认值</span></span><br><span class="line">func(<span class="meta">@RequestParam(value=&quot;id&quot;,required=false,defaultValue=&quot;0&quot;)</span> Integer myId)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>Spring-Data-Jpa<br>JPA（Java Persistence API）：定义了一系列对象持久化的标准。</p>
+<ul>
+<li><dl><dt>jpa.hibernate.ddl-auto: create(运行的时候创建一张新的表)</dt><dd>update (第一次运行的时候创建一张表，如果有数据会保留)，常用<br>：create-drop(应用停下来了，会删掉表)<br>：validate(验证数据库中和你的表是否一致)</dd></dl></li>
+<li><p>jpa.show-sql: true</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity(这个是将这个类映射为数据库中的一张表)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span></span><br><span class="line"><span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>创建表的实体，如上的 @Entity</li>
+<li>创建实体的 reposity</li>
+<li>创建 service，内嵌 reposity，对数据库的接口，进行再次包装</li>
+<li>创建 controller，构建 url，解析参数</li>
+</ol>
+<h4 id="Restful-接口"><a href="#Restful-接口" class="headerlink" title="Restful 接口"></a>Restful 接口</h4><ul>
+<li>get</li>
+<li>post：新加入</li>
+<li>put：更新，传入 id</li>
+<li>delete：删除</li>
+</ul>
+<h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><p>希望两条数据同时插入，要不然都不成功</p>
+<ul>
+<li><p>@Transactional：在 Service 中的方法上面加入@Transactional，事务注解，表示这个方法内的多条数据，或者一条数据如果失败，那么就回退。只有查询的时候不需要加入事务操作。</p>
+</li>
+<li><p>@Test<br>@Transactional<br>连在一起使用，可以达到回滚的目的？？也就是只用于测试，不真正的向数据库中插入</p>
+</li>
+</ul>
+<h1 id="web-进阶"><a href="#web-进阶" class="headerlink" title="web 进阶"></a>web 进阶</h1><p>还需要学习</p>
+<ul>
+<li>@Valid 表单验证</li>
+<li>AOP 处理请求</li>
+<li>AOP 统一异常处理</li>
+<li>单元测试</li>
+</ul>
+<p>待了解</p>
+<ul>
+<li>spring-data-jpa：关系型数据库</li>
+<li>JdbcTemplate</li>
+<li>Mybatis</li>
+<li>redis+MongoDB：nosql 数据库</li>
+<li>用缓存应对高并发</li>
+</ul>
+<h2 id="Valid-表单验证"><a href="#Valid-表单验证" class="headerlink" title="@Valid 表单验证"></a>@Valid 表单验证</h2><p>@Valid 和@BindingResult 一大利器</p>
+<h2 id="AOP-统一处理请求日志"><a href="#AOP-统一处理请求日志" class="headerlink" title="AOP 统一处理请求日志"></a>AOP 统一处理请求日志</h2><h3 id="AOP-是一种程序的设计思想"><a href="#AOP-是一种程序的设计思想" class="headerlink" title="AOP 是一种程序的设计思想"></a>AOP 是一种程序的设计思想</h3><p>POP：面向过程<br>OOP：面向对象<br>AOP：面向切面</p>
+<p>将通用逻辑从业务逻辑中分出来</p>
+<ul>
+<li>增加 aop 的依赖</li>
+<li>增加处理文件 aspect</li>
+</ul>
+<p>面向切面编程，增加 url 的切点，在之前和之后进行处理验证</p>
+<p>@Slf4j：类注解，处理日志</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Pointcut(&quot;execution(public * edu.fudan.advancedweb.web3d.controller.UserController.findById(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">log</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Before(&quot;log()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doBefore</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@After(&quot;log()&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doAfter</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;2222&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@AfterReturning(returning &#x3D; “object”, pointcut &#x3D; “log()”)：返回之后的对象</li>
+</ul>
+<h3 id="统一异常处理"><a href="#统一异常处理" class="headerlink" title="统一异常处理"></a>统一异常处理</h3><p>将返回的信息进行包装，成为：code，msg，data</p>
+<p>Spring 只对 RuntimeException，</p>
+<p>当我们需要修改返回的 error 的 httpstatus 时，注意，有时候会出现自定义的错误，但是 status 为 200，只需要在一行的捕获下面，加上@ResponseStatus(HttpStatus.***)可。</p>
+<h1 id="项目优化"><a href="#项目优化" class="headerlink" title="项目优化"></a>项目优化</h1><h2 id="ab-压测模拟并发"><a href="#ab-压测模拟并发" class="headerlink" title="ab 压测模拟并发"></a>ab 压测模拟并发</h2><p>用 Apache 进行压测</p>
+<ul>
+<li><p>ab -n 100 -c 100 url(-n 表示 100 个请求，-c 表示 100 个并发。相当于 100 个人同时进行请求)</p>
+</li>
+<li><p>-t 60。表示 60s 内不停地模拟</p>
+</li>
+<li><p>使用 synchronized：解决了问题，降低了性能。数据安全是第一位。</p>
+</li>
+<li><p>无法做得到细粒度的控制</p>
+</li>
+<li><p>只适合单点的情况</p>
+</li>
+</ul>
+<h2 id="redis-分布式锁"><a href="#redis-分布式锁" class="headerlink" title="redis 分布式锁"></a>redis 分布式锁</h2><ul>
+<li><p>setnx：set if not exist，不成立的时候来建立锁</p>
+</li>
+<li><p>getset：先 get，再次 set。返回原来的值，设置新的值。</p>
+</li>
+<li><p>支持高可用，分布式集群</p>
+</li>
+<li><p>更细粒度的锁</p>
+</li>
+<li><p>多台机器上多个进程对一个数据进行操作的互斥</p>
+</li>
+<li><p>他可以做分布式锁一个重要原因是它是单线程的</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">lock</span><span class="params">(String key, String value)</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//已经加锁成功了</span></span><br><span class="line">    <span class="keyword">if</span> (redisTemplate.opsForValue().setIfAbsent(key, value)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">currentValue</span> <span class="operator">=</span> redisTemplate.opsForValue().get(key);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果过期。这段代码就是CAS，乐观锁的实现。解决的是两个线程同时进入</span></span><br><span class="line">    <span class="comment">//的情况。</span></span><br><span class="line">    <span class="keyword">if</span> (!StringUtils.isEmpty(currentValue) &amp;&amp; Long.parseLong(currentValue) &lt; System.currentTimeMillis()) &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">oldValue</span> <span class="operator">=</span> redisTemplate.opsForValue().getAndSet(key, value);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取上一个锁的时间</span></span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.isEmpty(oldValue) &amp;&amp; oldValue.equals(currentValue)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">unlock</span><span class="params">(String key, String value)</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">currentValue</span> <span class="operator">=</span> redisTemplate.opsForValue().get(key);</span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.isEmpty(currentValue) &amp;&amp; currentValue.equals(value)) &#123;</span><br><span class="line">            redisTemplate.opsForValue().getOperations().delete(key);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        log.error(<span class="string">&quot;【redis 分布式锁】解锁异常&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-缓存"><a href="#Redis-缓存" class="headerlink" title="Redis 缓存"></a>Redis 缓存</h2><ul>
+<li>命中</li>
+<li>失效：时间到了</li>
+<li>更新</li>
+</ul>
+<p>进行缓存需要实现序列化</p>
+<ul>
+<li>@Cacheable(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>@CachePut(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>@CacheEvict(cacheName&#x3D;”userList”,key&#x3D;”123”);</li>
+<li>类上面的@CacheConfig(cacheName&#x3D;”userList”);<br>取消下面的 cacheName</li>
+</ul>
+<p>@Cacheable 中</p>
+<ul>
+<li><p>key 可以动态，key&#x3D;”#sellerId”</p>
+</li>
+<li><p>condition&#x3D;”#sellerId &gt; 30”</p>
+</li>
+<li><p>unless&#x3D;”#result.getCode()!&#x3D;0”(当返回 code 为 0 的时候，进行缓存)</p>
+</li>
+<li><p>建表用 sql，不用 JPA 建表</p>
+</li>
+<li><p>慎用@OneToMany 等，表的关系根据逻辑控制</p>
+</li>
+</ul>
+<p>mybatis：</p>
+<ul>
+<li>注解</li>
+<li>xml</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/Maven%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Maven学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/SpringCloud/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring Cloud学习</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>XML学习手册 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="eXtensible Markup Language;关于xml的学习心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML学习手册">
+<meta property="og:url" content="http://example.com/2022/07/25/XML%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="eXtensible Markup Language;关于xml的学习心得">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-07-25T10:31:02.000Z">
+<meta property="article:modified_time" content="2019-04-21T13:28:04.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="XML">
+<meta property="article:tag" content="JavaWeb">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-XML学习手册" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/XML%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XML学习手册
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaWeb/" rel="tag">JavaWeb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XML/" rel="tag">XML</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">技术学习笔记</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><ul>
+<li>version</li>
+<li>encoding：默认是 UTF-8</li>
+<li>如果 encoding&#x3D;”GB2312”，就可以在其中使用简体中文。还有 ISO-8858-1</li>
+<li>注释用 <strong><!--开始，结束--></strong> 来包含。不能放在第一项，因为声明必须第一行，不能放在任何一个标记中</li>
+</ul>
+<h3 id="形式良好的-XML-文档"><a href="#形式良好的-XML-文档" class="headerlink" title="形式良好的 XML 文档"></a>形式良好的 XML 文档</h3><ul>
+<li>对大小写敏感</li>
+<li>必须有根元素</li>
+<li>属性值必须加引号</li>
+<li>不可以加特殊字符，需要引用</li>
+<li>会保留空格</li>
+</ul>
+<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><p><strong>元素</strong></p>
+<ul>
+<li>字母数字和其他</li>
+<li>不能以数字或者标点开始</li>
+<li>不能以 xml（各种大小写）开始</li>
+<li>名称不能包含空格</li>
+</ul>
+<p><strong>最佳</strong><br>比较短；<br>避免：- . :等，用下划线</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>尽量避免使用属性，与数据有关的都用元素来描述，属性来提供与数据无关的信息。</p>
+<p>元数据（有关数据的数据）应当存储为属性，而数据本身应当存储为元素。</p>
+<h3 id="xml-验证"><a href="#xml-验证" class="headerlink" title="xml 验证"></a>xml 验证</h3><p>拥有正确语法的 XML 被称为“形式良好”的 XML。</p>
+<p>通过 DTD 验证的 XML 是“合法”的 XML。</p>
+<h4 id="XML-DTD-Document-Type-Definition"><a href="#XML-DTD-Document-Type-Definition" class="headerlink" title="XML DTD(Document Type Definition)"></a>XML DTD(Document Type Definition)</h4><p>XML 使用 DTD 来描述数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;ISO-8859-1&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">note</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;Note.dtd&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h4><p>W3C 支持一种基于 XML 的 DTD 代替者，它名为 XML Schema：</p>
+<h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><p>我们可以采用 CSS 和 XSLT 来显示 XML，一般提倡 XSLT</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;ISO-8859-1&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=<span class="string">&quot;text/xsl&quot;</span> href=<span class="string">&quot;simple.xsl&quot;</span>?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>当发生冲突的时候，我们可以采用两种方式解决</p>
+<h4 id="使用前缀来避免命名冲突"><a href="#使用前缀来避免命名冲突" class="headerlink" title="使用前缀来避免命名冲突"></a>使用前缀来避免命名冲突</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h:table</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:td</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">h:td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:td</span>&gt;</span>Bananas<span class="tag">&lt;/<span class="name">h:td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">h:tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h:table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用命名空间（Namespaces）"><a href="#使用命名空间（Namespaces）" class="headerlink" title="使用命名空间（Namespaces）"></a>使用命名空间（Namespaces）</h4><pre><code>    xmlns:namespace-prefix=&quot;namespaceURI&quot;
+</code></pre>
+<p>与仅仅使用前缀不同，我们为 <table> 标签添加了一个 xmlns 属性，这样就为前缀赋予了一个与某个命名空间相关联的限定名称。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h:table</span> <span class="attr">xmlns:h</span>=<span class="string">&quot;http://www.w3.org/TR/html4/&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:td</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">h:td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h:td</span>&gt;</span>Bananas<span class="tag">&lt;/<span class="name">h:td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">h:tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h:table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>默认的命名空间</p>
+<pre><code>    xmlns=&quot;namespaceURI&quot;
+</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/TR/html4/&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span>Bananas<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="XML-CDATA-忽略解析"><a href="#XML-CDATA-忽略解析" class="headerlink" title="XML CDATA 忽略解析"></a>XML CDATA 忽略解析</h3><p>PCDATA 指的是被解析的字符数据（Parsed Character Data）。</p>
+<p>XML 解析器通常会解析 XML 文档中所有的文本。</p>
+<p>非法的 XML 字符必须被替换为实体引用（entity reference）。<br>术语 CDATA 指的是不应由 XML 解析器进行解析的文本数据（Unparsed Character Data）。</p>
+<p>在 XML 元素中，”&lt;” 和 “&amp;” 是非法的。</p>
+<p>“&lt;” 会产生错误，因为解析器会把该字符解释为新元素的开始。</p>
+<p>“&amp;” 也会产生错误，因为解析器会把该字符解释为字符实体的开始。</p>
+<p>某些文本，比如 JavaScript 代码，包含大量 “&lt;” 或 “&amp;” 字符。为了避免错误，可以将脚本代码定义为 CDATA。</p>
+<p><strong>CDATA</strong> 部分中的所有内容都会被解析器忽略。</p>
+<p>CDATA 部分由 <strong><![CDATA[" 开始，由 "]]></strong> 结束：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">&lt;![CDATA[</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">function matchwo(a,b)</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">&#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">if (a &lt; b &amp;&amp; a &lt; 0) then</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  return 1;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">else</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  return 0;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">&#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">]]&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>关于 CDATA 部分的注释：</strong></p>
+<ul>
+<li>CDATA 部分不能包含字符串 “]]&gt;”。也不允许嵌套的 CDATA 部分。</li>
+<li>标记 CDATA 部分结尾的 “]]&gt;” 不能包含空格或折行。</li>
+</ul>
+<h2 id="XSL（Extensible-Stylesheet-Language）显示-XSL"><a href="#XSL（Extensible-Stylesheet-Language）显示-XSL" class="headerlink" title="XSL（Extensible Stylesheet Language）显示 XSL"></a>XSL（Extensible Stylesheet Language）显示 XSL</h2><p>XSLT 是一种用来转换 XML 文档结构的语言，一个 XSL 文件本身就是一个 XML 文档。</p>
+<p>XSL 包含三部分：</p>
+<blockquote>
+<p>XSLT——转换 XML 文档<br>XPath——浏览定位 XML 文档<br>XSL-FO——格式化 XML 文档</p>
+</blockquote>
+<h3 id="CSS-与-XSL"><a href="#CSS-与-XSL" class="headerlink" title="CSS 与 XSL"></a>CSS 与 XSL</h3><p>CSS 很多缺点：不能重排序，不能判断哪个元素显示；不能统计计算元素中的数据</p>
+<h3 id="技术难题"><a href="#技术难题" class="headerlink" title="技术难题"></a>技术难题</h3><ul>
+<li>从源 XML 文档读取信息：<br>XPath：定位<br>XSLT：定位之后读取</li>
+<li>目标 XML 写入信息<br>XSLT 元素</li>
+</ul>
+<h4 id="模板驱动模型"><a href="#模板驱动模型" class="headerlink" title="模板驱动模型"></a>模板驱动模型</h4><p>XSL 提供了一种归并功能。XSL 样式表包含了一个描述结果结构的模板。</p>
+<h3 id="XPath"><a href="#XPath" class="headerlink" title="XPath"></a>XPath</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">definition</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">definition</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">definition</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">definition</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">version</span>=<span class="string">&quot;9.9&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">definition</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">definition</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;root&#x2F;item[position()&#x3D;1]（第一个 title）<br>&#x2F;root&#x2F;item&#x2F;definition&#x2F;title（第二个 title）<br>&#x2F;root&#x2F;item（全部 item）<br>.&#x2F;@version（选择属性节点）</p>
+<h3 id="XSLT"><a href="#XSLT" class="headerlink" title="XSLT"></a>XSLT</h3><ul>
+<li><p>有 37 个元素</p>
+</li>
+<li><p>本身是一个 xml 文件</p>
+</li>
+<li><p>在源 xml 文件中引用样式表</p>
+<pre><code>  &lt;?xml-stylesheet type=&quot;text/xsl href=&quot;URI&quot;&quot;?&gt;
+</code></pre>
+</li>
+<li></li>
+</ul>
+<h4 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h4><p>从根元素开始</p>
+<ul>
+<li>&lt;xsl:stylesheet version&#x3D;”1.0” xmlns:xsl&#x3D;”URI”&gt; 表明这是一个样式表文件，URI 提供了定义的命名空间</li>
+<li>&lt;xsl:output encoding&#x3D;””&gt;指定输出的 HTML 使用的编码</li>
+<li>&lt;xsl:template match&#x3D;”&#x2F;“&gt;指明了根</li>
+</ul>
+<h2 id="Java-处理-XML"><a href="#Java-处理-XML" class="headerlink" title="Java 处理 XML"></a>Java 处理 XML</h2><p>SAX，DOM 是解析器所采用的两种重要的解析 API</p>
+<h4 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM(文档对象模型)"></a>DOM(文档对象模型)</h4><p>用于描述节点与节点之间的关系<br>较好的随机访问性能<br>平台无关<br>基于树的整颗对象树，建立在内存中</p>
+<ul>
+<li>创建 DocumentBuilderFactory，用该对象创建 DocumentBuilder。</li>
+<li>创建 DocumentBuilder。用它来解析得到 Document 对象。</li>
+<li>解析文件以创建 Document 对象。</li>
+</ul>
+<h4 id="SAX-Simple-API-for-XML"><a href="#SAX-Simple-API-for-XML" class="headerlink" title="SAX(Simple API for XML)"></a>SAX(Simple API for XML)</h4><p>顺序遍历文档，然后产生所有节点事件，在内存中只保留当前处理部分。</p>
+<h5 id="适用"><a href="#适用" class="headerlink" title="适用"></a>适用</h5><blockquote>
+<p>大数据量有优势<br>在文档中检索一个特定的值<br>创建文档子集，以便后继 DOM 处理</p>
+</blockquote>
+<h5 id="基于事件的机制"><a href="#基于事件的机制" class="headerlink" title="基于事件的机制"></a>基于事件的机制</h5><p><strong>优点</strong><br>与 xml 文件大小无关；不需要等到文档解析结束，就可以开始处理</p>
+<p><strong>缺点</strong><br>不允许随机访问，比 DOM 复杂，不可能对数据进行更改，或者返回数据流之前的数据</p>
+<p>两个可以结合使用</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/Spring%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Spring入门学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/make%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Make学习</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

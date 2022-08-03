@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>待办事项日历的设计、实验文档 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于增加代办事项功能的日历，详述设计思路和实验过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="待办事项日历的设计、实验文档">
+<meta property="og:url" content="http://example.com/2022/07/25/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于增加代办事项功能的日历，详述设计思路和实验过程">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/lab3%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/calendar.png">
+<meta property="article:published_time" content="2022-07-25T10:31:04.000Z">
+<meta property="article:modified_time" content="2019-03-28T13:12:20.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="日历设计">
+<meta property="article:tag" content="日历实验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/lab3%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/calendar.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-日历设计与实验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E9%AA%8C/" class="article-date">
+  	<time datetime="2022-07-25T10:31:04.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      待办事项日历的设计、实验文档
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" rel="tag">日历实验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" rel="tag">日历设计</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/">课程实验</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><p>如图所示。在日历的右侧设置了事项面板，并且根据按照全天和自定义的方式分别设置了两个框图，在下方是显示事件的栏目。</p>
+<p><img src="/lab3%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/calendar.png" alt="日历UI"><br>左侧显示的是日历，当成功添加一个事件，对应的日期变为黄色。当删除一个事件的时候，变回原来的颜色。</p>
+<p>点击左侧日期时，按钮变为灰色，并且全天事项变为当天。如果当天有事项，就在下方显示出对应的事项。</p>
+<h2 id="代办事项功能设计"><a href="#代办事项功能设计" class="headerlink" title="代办事项功能设计"></a>代办事项功能设计</h2><p>待办事项是一个独立的功能，因此可以重写一个 CalendarItem 类，DateChooser 类，ItemUtil 类来控制这个功能。</p>
+<h3 id="CalendarItem-类"><a href="#CalendarItem-类" class="headerlink" title="CalendarItem 类"></a>CalendarItem 类</h3><blockquote>
+<p>该类继承自 CalendarDate 类，表示日历中会用到的事项，并且提供了几个属性 :Date start,Date end 分别表示开始的日期和结束的日期；属性 text 保存相关的待办事项；</p>
+</blockquote>
+<table>
+        <tr>
+            <th>方法名</th>
+            <th>方法描述</th>
+        </tr>
+        <tr>
+            <th>CalendarItem(Date start, Date end, String text)</th>
+            <th>参数为代办事项的开始时间以及结束时间，输入的Date对象为null，或者text为null，那么就抛出异常（CalendarException）</th>
+        </tr>
+</table>
+
+<h3 id="ItemUtil-类"><a href="#ItemUtil-类" class="headerlink" title="ItemUtil 类"></a>ItemUtil 类</h3><blockquote>
+<p>该类是工具类，提供事项和日期相关的一些计算和判断方法。该构造函数已经被声明为 private，因此不可以实例化。属性 list<CalendarItem>属于 static，得到保存的事项列表。</p>
+</blockquote>
+<table>
+    <tr>
+        <th>方法名</th>
+        <th>方法描述</th>
+    </tr>
+    <tr>
+        <th>checkInTime(Date start, Date end, CalendarItem item)</th>
+        <th>参数为查询的日期，以及事项，返回值为boolean值。当事项的时间与输入的时间段有交叉部分时2，返回true。注意：当输入的对象全部为null，或者开始时间大于结束时间的时候，返回false。</th>
+    </tr>
+    <tr>
+        <th>hasItem(Date start)</th>
+        <th>参数为一天的年月日，返返回值为boolean值。判断这一天是否有项目，这个是用于更新面板时的动作。如果这一天有事项存在，那么返回true。<br>注意：当输入的对象为null时，返回false。</th>
+    </tr>
+    <tr>
+        <th>getItems(DateChooser chooser)</th>
+        <th>参数为DateChooser面板类型的对象，返回值为List<CalendarItem>。输入需要查询的面板类型，从中可以得到面板上的时间，从而得到在该时间段所有的事列表。<br>注意：当输入的chooser对象为null，返回null。</th>
+    </tr>
+    <tr>
+        <th>formmat(Date date)</th>
+        <th>参数为日期对象，返回值为Date对象。主要作用是将这个日期设置为当天的23：59分。<br>注意：当传入的参数为null时，返回null</th>
+    </tr>
+</table>
+
+<h3 id="DateChooser-类"><a href="#DateChooser-类" class="headerlink" title="DateChooser 类"></a>DateChooser 类</h3><blockquote>
+<p>继承自 JPanl，这是一个定制化的面板，定制化 JSpinner 对象，用于选择日期，还有查询按钮和添加事件的按钮。因为全天设置查询和自定义的设置查询不同，因此日期选择的行为也不同，也就是选择器上显示的日期不同。</p>
+</blockquote>
+<table>
+    <tr>
+        <th>方法名</th>
+        <th>方法描述</th>
+    </tr>
+    <tr>
+        <th>DateChooser(int select)</th>
+        <th>输入为int值，1或者2，分别代表是全天查询还是任意查询。</th>
+    </tr>
+    <tr>
+        <th>setText(Date startDate, Date endDate)</th>
+        <th>参数为开始时间和结束时间，用于设置时间选择器上的日期显示，没有返回值。如果输入的时间为null，或者不符合逻辑，那么将日期重新设置为今天。</th>
+    </tr>
+</table>
+
+<h2 id="实验报告"><a href="#实验报告" class="headerlink" title="实验报告"></a>实验报告</h2><h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><p>待办事项是一个独立的功能，因此可以重写一个 CalendarItem 类，DateChooser 类，ItemUtil 类来控制这个功能。</p>
+<p>CalendarItem 类是一个保存有关事项的类，里面主要保存事件的开始时间和结束时间，以及内容。每次成功创立一个事件之后，都 new 一个 CalendarItem 对象，并且将它保存在一个 Static 的 list 列表中。</p>
+<p>ItemUtil 类是一个工具类，构造函数已经被 private 修饰，因此不能实例化。里面封装了和事项有关的各种工具。这个类主要被 DateChooser 类调用。</p>
+<p>DateChooser 类继承自 JPanel，这是一个定制化的面板，设置了两个 JSpinner 的对象，用于选择日期，还有查询按钮和添加事件的按钮。因为全天设置查询和自定义的设置查询不同，因此日期选择的行为也不同。</p>
+<p>事项的面板和日历的属于不同的个体，在上面进行操作，两者的联系便在于开始日期和结束日期。因为在日历面板的上方可以得到当前年月，因此二者可以顺利的匹配。</p>
+<h4 id="设计亮点"><a href="#设计亮点" class="headerlink" title="设计亮点"></a>设计亮点</h4><p>此次设计主要有以下亮点：</p>
+<blockquote>
+<ul>
+<li>面板设置人性化，较为合理。在日历的右侧设置了事项面板，并且根据按照全天和自定义的方式分别设置了两个框图，在下方是显示事件的栏目，一目了然。</li>
+<li>用户交互十分友好。按照逻辑，显然开始时间必须小于等于结束时间，因此动态监听了时间选择器的内容改变事件。当结束时间小于开始的时候，就<strong>自动将结束时间调整为开始时间</strong>，极大地避免了用户因为失误而造成的逻辑混乱。</li>
+<li>时间选择器的设置。此次学习到采用定制的<strong>JSpinner 组件</strong>十分的方便快捷。如下所示，windows 的内部也是采用这个模型，显然十分的简捷和方便，易于编辑并且选择。对于用户的错误输入，他可以自行处理为正确的，比如超过合理的输入，它可以自动进行时分的运算，转换为对应的第二天；或者选择没有反应。</li>
+</ul>
+</blockquote>
+<pre><code>//获得时间日期模型
+SpinnerDateModel model = new SpinnerDateModel();
+//获得JSPinner对象
+JSpinner year = new JSpinner(model);
+year.setValue(new Date());
+</code></pre>
+<h4 id="设计遗憾"><a href="#设计遗憾" class="headerlink" title="设计遗憾"></a>设计遗憾</h4><blockquote>
+<ul>
+<li>由于对 swing 组件的错误认知，导致界面上有许多可以继续改进的地方。比如颜色形状等。</li>
+<li>查询事件的时候，在下方的框内显示事项不怎么友好。因为时间原因，并且对于 swing 的 Box 布局不熟，多个事项往往会溢出整个 frame；并且当添加的事项内容过多的时候，只能查看到一部分。这些都是需要改进的地方。</li>
+</ul>
+</blockquote>
+<h4 id="所遇问题及解决方法"><a href="#所遇问题及解决方法" class="headerlink" title="所遇问题及解决方法"></a>所遇问题及解决方法</h4><blockquote>
+<ol>
+<li>如何处理全天和自定义日期之间的关系？</li>
+</ol>
+</blockquote>
+<pre><code>`因为按照全天和自定义的日期进行操作，在本质上相同，都是有着开始和结束时间。因此可以将两者归为一类进行事件的处理。将全天的开始时间设为00：00，结束设为23：59，就可以和自定义的用同一种事件处理机制。`
+</code></pre>
+<blockquote>
+<ol>
+<li>如何设置时间选择器？</li>
+</ol>
+</blockquote>
+<pre><code>`想了很多种方法，最简单的就是直接设置两个TexxtField框，让用户进行文本的输入，再次进行判断。可是这样对于用户很不友好，因为需要输入的文本过长，因此可能导致错误的输入。因此采用**JSpinner的组件**，用户既可以输入，也可以点击两旁的按钮进行选择；并且可以处理用户的错误输入，比如超过合理的输入，它可以自动进行时分的运算，转换为对应的第二天；或者不反应。`
+</code></pre>
+<blockquote>
+<ol>
+<li>点击删除按钮的时候，如何正确删除事件？</li>
+</ol>
+</blockquote>
+<pre><code>`因为需要将删除按钮和事件进行绑定，因此需要得到delete按钮的属性。e.getSource得到的是一个event，我一开始无论如何都无法得到事件源的属性。最终终于得到一个方法，就是将event强制转化为JButton类型，才解决问题。`
+</code></pre>
+<h4 id="Test-类的修改说明"><a href="#Test-类的修改说明" class="headerlink" title="Test 类的修改说明"></a>Test 类的修改说明</h4><ul>
+<li>新的测试改变了工具类 ItemUtil 类的测试用例，因为重新定义了用户输入日期的组件，并且组件可以自动判断自身的合法性，因此无需再重新鉴定输入的合法。</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B1%95%E5%BC%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          字符串的展开题目
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/%E5%B9%BF%E5%91%8A%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">广告系统</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hash表平均查找长度ASL计算 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开放地址查找成功的ASL和不成功的ASL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hash表平均查找长度ASL计算">
+<meta property="og:url" content="http://example.com/2022/07/25/Hash%E8%A1%A8%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6ASL%E8%AE%A1%E7%AE%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开放地址查找成功的ASL和不成功的ASL">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/hash/lalianasl.jpg">
+<meta property="article:published_time" content="2022-07-25T10:31:00.000Z">
+<meta property="article:modified_time" content="2019-04-09T12:20:26.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="Hash">
+<meta property="article:tag" content="ASL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/hash/lalianasl.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Hash表平均查找长度ASL计算" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Hash%E8%A1%A8%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6ASL%E8%AE%A1%E7%AE%97/" class="article-date">
+  	<time datetime="2022-07-25T10:31:00.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hash表平均查找长度ASL计算
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASL/" rel="tag">ASL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hash/" rel="tag">Hash</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">技术学习笔记</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>ASL 指的是平均查找时间</p>
+<p><strong>关键字序列</strong>：（7、8、30、11、18、9、14）</p>
+<p><strong>散列函数</strong>： H(Key) &#x3D; (key x 3) MOD 7</p>
+<h2 id="装载因子：-0-7"><a href="#装载因子：-0-7" class="headerlink" title="装载因子： 0.7"></a><strong>装载因子</strong>： 0.7</h2><hr>
+<h2 id="处理冲突：-线性探测再散列法"><a href="#处理冲突：-线性探测再散列法" class="headerlink" title="处理冲突： 线性探测再散列法"></a>处理冲突： 线性探测再散列法</h2><h3 id="查找成功的-ASL-计算方法："><a href="#查找成功的-ASL-计算方法：" class="headerlink" title="查找成功的 ASL 计算方法："></a>查找成功的 ASL 计算方法：</h3><p>因为现在的数据是 7 个，填充因子是 0.7。所以数组大小&#x3D;7&#x2F;0.7&#x3D;10，即写出来的散列表大小为 10，下标从 0~9。<br>第一个元素 7，带入散列函数，计算得 0。<br>第二个元素 8，带入散列函数，计算得 3。<br>第三个元素 30，带入散列函数，计算得 6。<br>第四个元素 11，带入散列函数，计算得 5。<br>第五个元素 18，带入散列函数，计算得 5；此时和 11 冲突，使用线性探测法，得 7。<br>第六个元素 9，带入散列函数，计算得 6；此时和 30 冲突，使用线性探测法，得 8。<br>第七个元素 14，带入散列函数，计算得 0；此时和 7 冲突，使用线性探测法，得 1。<br>所以散列表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">地址</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">key</td>
+<td align="center">7</td>
+<td align="center">14</td>
+<td align="center"></td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">11</td>
+<td align="center">30</td>
+<td align="center">18</td>
+<td align="center">9</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">成功</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">不成功</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>所以查找成功的计算：<br>如果查找 7，则需要查找 1 次。<br>如果查找 8，则需要查找 1 次。<br>如果查找 30，则需要查找 1 次。<br>如果查找 11，则需要查找 1 次。<br>如果查找 18，则需要查找 3 次：第一次查找地址 5，第二次查找地址 6，第三次查找地址 7，查找成功。<br>如果查找 9，则需要查找 3 次：第一次查找地址 6，第二次查找地址 7，第三次查找地址 8，查找成功。<br>如果查找地址 14，则需要查找 2 次：第一次查找地址 0，第二次查找地址 1，查找成功。<br>所以，<strong>ASL&#x3D;（1+2+1+1+1+3+3）&#x2F; 7&#x3D;12&#x2F; 7</strong></p>
+<hr>
+<h3 id="查找不成功的-ASL-计算方法"><a href="#查找不成功的-ASL-计算方法" class="headerlink" title="查找不成功的 ASL 计算方法"></a>查找不成功的 ASL 计算方法</h3><p><strong>1. 定义什么叫查找不成功</strong><br>举个例子来说吧。在已知上面散列表的基础上，如果要查找 <strong>key 为 4</strong> 的关键字。根据散列函数可以计算 Hash(key)&#x3D;Hash(4)&#x3D;5。此时在地址为 5 的地方取出那个数字，发现 key&#x3D;11，不等于 4。这就说明在装填的时候会发生冲突。根据冲突处理方法，会继续检测地址为 6 的值，发现 key&#x3D;30，依然不等。这个时候到了<strong>地址为 6</strong>，但是依然没有找到。那么就说明根本就没有 key&#x3D;4 这个关键字，<strong>说明本次查找不成功。注意：为什么到地址 6？因为散列函数中有 mod7 ，对应的地址为 0~6，即 0~6 查找失败的查找次数。</strong><br>再举一个例子。查找 <strong>key 为 0</strong>的关键字，根据散列函数可以计算 Hash(key)&#x3D;Hash(0)&#x3D;0。此时在地址为 0 的地方取出那个数字，发现 key&#x3D;7，不等于 0。这就说明在装填的时候会发生冲突。根据冲突处理方法，会继续检测地址为 1 的值，发现 key&#x3D;14，依然不等。这个时候到了 <strong>地址为 2，发现为空，依然没有找到</strong>。所以停止查找，本次查找不成功。因为如果 key&#x3D;0 这个关键字存在的话，依照冲突处理函数，就一定能找到它。总不能丢了吧。</p>
+<p><strong>2. 根据第一点定义的不成功，依次推下去：</strong><br>查找地址为 0 的值所需要的次数为 3，<br>查找地址为 1 的值所需要的次数为 2，<br>查找地址为 2 的值所需要的次数为 1，<br>查找地址为 3 的值所需要的次数为 2，<br>查找地址为 4 的值所需要的次数为 1，<br>查找地址为 5 的值所需要的次数为 5，<br>查找地址为 6 的值所需要的次数为 4。 3.计算<br><strong>查找不成功 ASL&#x3D;（3+2+1+2+1+5+4）&#x2F; 7&#x3D;18&#x2F; 7</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qixinbo/p/7782314.html">原博客地址:https://www.cnblogs.com/qixinbo/p/7782314.html</a></p>
+<hr>
+<h2 id="链地址法"><a href="#链地址法" class="headerlink" title="链地址法"></a>链地址法</h2><p>假设散列表的长度是 13，散列函数为 H(K) &#x3D; k % 13，给定的关键字序列为{32， 14， 23， 01， 42， 20， 45， 27， 55， 24， 10， 53}。</p>
+<p><img src="/hash/lalianasl.jpg" alt="拉链法"><br>查找成功时的平均查找长度：</p>
+<p>ASL &#x3D; (1*6+2*4+3*1+4*1)&#x2F;12 &#x3D; 7&#x2F;4</p>
+<p>查找不成功时的平均查找长度：</p>
+<p>ASL &#x3D; (4+2+2+1+2+1)&#x2F;13</p>
+<p><strong>注意：查找成功时，分母为哈希表元素个数，查找不成功时，分母为 mod 的 K 值。</strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/%E4%BD%BF%E7%94%A8netty%E6%9E%84%E5%BB%BAwebsocket%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          使用netty构建websocket服务器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java字符串相关知识点</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

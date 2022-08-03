@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Spring入门学习 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于学习Spring的一些思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring入门学习">
+<meta property="og:url" content="http://example.com/2022/07/25/Spring%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于学习Spring的一些思考">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-07-25T10:31:02.000Z">
+<meta property="article:modified_time" content="2019-06-04T02:38:00.000Z">
+<meta property="article:author" content="xywu">
+<meta property="article:tag" content="Spring Boot">
+<meta property="article:tag" content="Spring Cloud">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">xywu</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ASL/" style="font-size: 10px;">ASL</a> <a href="/tags/Docker%E5%85%A5%E9%97%A8/" style="font-size: 10px;">Docker入门</a> <a href="/tags/Hash/" style="font-size: 10px;">Hash</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Make/" style="font-size: 10px;">Make</a> <a href="/tags/Maven/" style="font-size: 13.33px;">Maven</a> <a href="/tags/Python%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Python基础</a> <a href="/tags/Restful/" style="font-size: 10px;">Restful</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 16.67px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 20px;">Spring Cloud</a> <a href="/tags/String/" style="font-size: 13.33px;">String</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/guns/" style="font-size: 10px;">guns</a> <a href="/tags/imook/" style="font-size: 10px;">imook</a> <a href="/tags/intern/" style="font-size: 10px;">intern</a> <a href="/tags/lab/" style="font-size: 10px;">lab</a> <a href="/tags/netty/" style="font-size: 10px;">netty</a> <a href="/tags/offer/" style="font-size: 10px;">offer</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" style="font-size: 10px;">分布式锁</a> <a href="/tags/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" style="font-size: 10px;">华为笔试</a> <a href="/tags/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" style="font-size: 13.33px;">后台开发</a> <a href="/tags/%E5%9B%9E%E6%BA%AF%E6%B3%95/" style="font-size: 10px;">回溯法</a> <a href="/tags/%E5%B0%8F%E5%86%8C/" style="font-size: 10px;">小册</a> <a href="/tags/%E5%BB%96%E9%9B%AA%E5%B3%B0/" style="font-size: 10px;">廖雪峰</a> <a href="/tags/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" style="font-size: 10px;">敏捷方法</a> <a href="/tags/%E6%97%A5%E5%8E%86%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">日历实验</a> <a href="/tags/%E6%97%A5%E5%8E%86%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">日历设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" style="font-size: 10px;">系统架构师</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a> <a href="/tags/%E9%87%8E%E5%A4%96%E6%B1%82%E7%94%9F/" style="font-size: 10px;">野外求生</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Spring学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/07/25/Spring%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-07-25T10:31:02.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring入门学习
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0/">微服务系列学习</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-学习"><a href="#Spring-学习" class="headerlink" title="Spring 学习"></a>Spring 学习</h1><h2 id="Spring-基础介绍"><a href="#Spring-基础介绍" class="headerlink" title="Spring 基础介绍"></a>Spring 基础介绍</h2><p>学习轻量级的控制反转（IOC），面向切面（AOP）</p>
+<h3 id="什么是-Spring？"><a href="#什么是-Spring？" class="headerlink" title="什么是 Spring？"></a>什么是 Spring？</h3><ul>
+<li>通过 IOC 的技术达到松耦合的目的</li>
+<li>AOP 的支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发。系统级的服务：与具体的业务代码无关，无论什么都需要应用的服务</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+<li>将简单的组件组合称为复杂的应用，这个意义上是框架</li>
+</ul>
+<h3 id="Why-Spring？"><a href="#Why-Spring？" class="headerlink" title="Why Spring？"></a>Why Spring？</h3><p>我们将对象的生命周期的管理交给了 Spring，所有的对象都叫做 bean，管理对象的容器叫做 bean 容器，省去了对象的创建和开销的过程。</p>
+<p><strong>作用</strong></p>
+<ul>
+<li>容器</li>
+<li>对多种技术的支持</li>
+<li>AOP：事务管理，日志等</li>
+<li>提供了众多方便的辅助类（JDBC 等）</li>
+</ul>
+<p><strong>适用范围</strong></p>
+<ul>
+<li>单独使用 Bean 容器，Bean 管理</li>
+<li>使用 AOP 进行切面处理</li>
+<li>其他的，如对消息的支持</li>
+</ul>
+<h3 id="Spring-框架"><a href="#Spring-框架" class="headerlink" title="Spring 框架"></a>Spring 框架</h3><p>框架与类库</p>
+<ul>
+<li>框架封装了逻辑、高内聚的，类库则是松散的工具的组合</li>
+<li>框架专注于某一领域，类库更通用</li>
+</ul>
+<h2 id="Spring-IOC-容器"><a href="#Spring-IOC-容器" class="headerlink" title="Spring IOC 容器"></a>Spring IOC 容器</h2><h3 id="接口及面向接口编程"><a href="#接口及面向接口编程" class="headerlink" title="接口及面向接口编程"></a>接口及面向接口编程</h3><p>接口：声明没有实现<br>抽象类：与一般的一样，除了不能实例化</p>
+<h3 id="什么是-IOC"><a href="#什么是-IOC" class="headerlink" title="什么是 IOC"></a>什么是 IOC</h3><p>控制反转，控制权的转移，我们并不负责依赖对象的创建和维护，而是需要使用的时候，由外部容器负责创建和维护。</p>
+<p>DI（依赖注入），负责对象组装功能。在 IOC 容器在运行期间，动态的将某种依赖关系注入到对象当中。</p>
+<p><strong>目的</strong> ：创建对象并且组装对象之间的关系。</p>
+<p>获得依赖对象的过程被反转了。</p>
+<h3 id="Spring-的-Bean-配置和初始化"><a href="#Spring-的-Bean-配置和初始化" class="headerlink" title="Spring 的 Bean 配置和初始化"></a>Spring 的 Bean 配置和初始化</h3><p>Spring 对于 Bean 整个的使用有两种方式：一种是通过注解，一种是基于 xml 的配置。</p>
+<p>xml 里面<Bean> id，class（地址）</p>
+<p>初始化过程，基础，两个包</p>
+<ul>
+<li>BeanFactory 提供配置结构和基本功能，加载并初始化 Bean</li>
+<li>ApplicationContext 保存了 Bean 对象，也就是容器。加载方式：<br>加载本地文件；绝对路径<br>Classpath；相对路径<br>web 应用中依赖 servlet 或者 Listener</li>
+</ul>
+<h3 id="Spring-注入"><a href="#Spring-注入" class="headerlink" title="Spring 注入"></a>Spring 注入</h3><p>容器加载 bean 的时候，完成对变量的赋值行为。</p>
+<p>常用的两种方式：设值注入，构造注入</p>
+<h4 id="设值注入"><a href="#设值注入" class="headerlink" title="设值注入"></a>设值注入</h4><p>也就是通过 set 的方式注入。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">&quot;injection&quot;</span> class=<span class="string">&quot;top.wuxiya.spring.Hello&quot;</span>&gt;</span><br><span class="line">    <span class="comment">//ref指向的是id，也就是一个bean的引用，赋值给命名叫$name的变量</span></span><br><span class="line">    &lt;property name=<span class="string">&quot;injectionDAO&quot;</span> ref=<span class="string">&quot;injectionDAO&quot;</span>&gt;&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;bean id=<span class="string">&quot;injectionDAO&quot;</span> class=<span class="string">&quot;top.wuxiya.spring.HelloDAO&quot;</span>&gt;&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="构造注入"><a href="#构造注入" class="headerlink" title="构造注入"></a>构造注入</h4><p>也就是通过 构造方法的方式注入。</p>
+<p><strong>注意：</strong>当通过构造注入的时候，构造器传入的变量名称必须与 name 设定的一致。</p>
+<p>构造中，看 name。name 名称与传入的变量名匹配。</p>
+<p>set 注入中，看类型。</p>
+<p>一般来说最好都一样就不用区分了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    &lt;bean id=<span class="string">&quot;injectionService&quot;</span> class=<span class="string">&quot;top.wuxiya.spring.Hello&quot;</span>&gt;</span><br><span class="line">        <span class="comment">//ref指向的是id，也就是一个bean的引用，赋值给命名叫$name的变量</span></span><br><span class="line">        &lt;constructor-arg name=<span class="string">&quot;injectionDAO&quot;</span> ref=<span class="string">&quot;injectionDAO&quot;</span>&gt;&lt;/constructor-arg&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=<span class="string">&quot;injectionDAO&quot;</span> class=<span class="string">&quot;top.wuxiya.spring.HelloDAO&quot;</span>&gt;&lt;/bean&gt;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>DAO——数据库<br>service——业务逻辑的部分</p>
+<h2 id="Bean-的配置"><a href="#Bean-的配置" class="headerlink" title="Bean 的配置"></a>Bean 的配置</h2><h3 id="Bean-的配置项"><a href="#Bean-的配置项" class="headerlink" title="Bean 的配置项"></a>Bean 的配置项</h3><p>获取 Bean 的两种方式：通过 Id 来获取，通过 Bean 的类型来获取</p>
+<ul>
+<li>Id：唯一标识</li>
+<li>Class：实例化的具体类——必须</li>
+<li>Scope：作用域</li>
+<li>构造器参数</li>
+<li>Properties：属性</li>
+<li>懒加载模式</li>
+<li>自动装配的模式</li>
+<li>初始化和销毁的方法</li>
+</ul>
+<h3 id="Bean-的作用域"><a href="#Bean-的作用域" class="headerlink" title="Bean 的作用域"></a>Bean 的作用域</h3><p><scope>：两种模式，singleton（默认），prototype</p>
+<ul>
+<li>singleton：单例模式，一个 Bean 容器中只存在一个。默认</li>
+<li>prototype：每次请求都创建新的实例，destroy 方式不生效</li>
+<li>request：每次 http 请求创建一个实例且仅在但钱 request 内有效</li>
+<li>session：同上，当前 session 中有效</li>
+<li>glodbal session：单点登陆？？</li>
+</ul>
+<h3 id="Bean-的生命周期"><a href="#Bean-的生命周期" class="headerlink" title="Bean 的生命周期"></a>Bean 的生命周期</h3><p><strong>初始化两种</strong></p>
+<ul>
+<li>一种为在 Bean 声明中添加 init-method&#x3D;”methodName”</li>
+<li>实现 InitializingBean 接口，覆盖 afterPropertiesSet()，自动调用这个方法</li>
+</ul>
+<p><strong>销毁两种</strong></p>
+<ul>
+<li>一种为在 Bean 声明中添加 destory-method&#x3D;”methodName,cleanup”</li>
+<li>实现 DisposableBean 接口，覆盖 destroy()，自动调用这个方法</li>
+</ul>
+<p><strong>全局初始化和销毁方法</strong><br>在 beans 中添加,default-init-method&#x3D;”name”,default-destory-method&#x3D;”name”</p>
+<p>默认的方法可以不被实现，并且只要局部有一种实现就被覆盖。</p>
+<p>局部初始化的两种方式，必须实现，其中接口的优先级大于方法的添加。</p>
+<h3 id="Aware-接口"><a href="#Aware-接口" class="headerlink" title="Aware 接口"></a>Aware 接口</h3><ul>
+<li>实现了 Aware 接口的 bean 在初始化之后，可以获取对应资源</li>
+<li>对 Spring 进行简单的扩展提供了方便的入口</li>
+<li>可以对 Spring 对应资源进行操作（慎重）</li>
+</ul>
+<p>比如得到加载当前 bean 的上下文</p>
+<h3 id="Bean-的自动装配（Autowiring）"><a href="#Bean-的自动装配（Autowiring）" class="headerlink" title="Bean 的自动装配（Autowiring）"></a>Bean 的自动装配（Autowiring）</h3><ul>
+<li>No 不做任何操作，默认</li>
+<li>byname：根据属性名。设置<default-autowiring>，并且需要设置 set 方法。这个和 set 注入类似（看传入名），只不过不用再每一个 bean 里面显示声明 property。</li>
+<li>byType：bean 的类型。多个类型抛异常。和 bean 的 ID 没有关系，在 set 方法（看类型）中匹配类型。</li>
+<li>constructor：应用于构造器参数。在构造方法中查找构造器方法传入的类型。没有找到抛异常</li>
+</ul>
+<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><p>针对资源文件的统一接口</p>
+<h2 id="Bean-的注解"><a href="#Bean-的注解" class="headerlink" title="Bean 的注解"></a>Bean 的注解</h2><h3 id="Bean-管理的类注解实现"><a href="#Bean-管理的类注解实现" class="headerlink" title="Bean 管理的类注解实现"></a>Bean 管理的类注解实现</h3><p>类的注解</p>
+<ul>
+<li>@Component 是一个通用注解，可用于任何 bean</li>
+<li>@Repository：用于注解 DAO 类，即持久层</li>
+<li>@Service：Service 类，服务层</li>
+<li>@Controller 用于 Controller 类，即控制层（MVC）</li>
+</ul>
+<p>元注解：许多注解可以作为自己的代码，即“元数据注解”。可以用于领域给注解。还可以定制注解</p>
+<h4 id="类的自动检测及-Bean-的注册"><a href="#类的自动检测及-Bean-的注册" class="headerlink" title="类的自动检测及 Bean 的注册"></a>类的自动检测及 Bean 的注册</h4><ul>
+<li>默认情况下，类被自动发现并注册 bean 的条件是：使用@Component，@Repository，@Service，@Controller 注解或者使用@Component 的自定义注解</li>
+<li>使用过滤器进行自定义扫描，修改自动发现的行文</li>
+<li>还可以禁用自动发现与注册</li>
+</ul>
+<h4 id="定义-bean"><a href="#定义-bean" class="headerlink" title="定义 bean"></a>定义 bean</h4><ul>
+<li>可以显示指定 Bean 的 name。否则默认是类名的小写。</li>
+<li>还可以自定义命名的规则（一定要包含一个无参的构造器）。</li>
+</ul>
+<h4 id="作用域-Scope"><a href="#作用域-Scope" class="headerlink" title="作用域@Scope"></a>作用域@Scope</h4><ul>
+<li>@Scope(“prototype”)<br>@Repository</li>
+<li>也可以自定义设置 scope</li>
+</ul>
+<h4 id="代理方式"><a href="#代理方式" class="headerlink" title="代理方式"></a>代理方式</h4><p>使用 scoped-proxy 属性指定代理，有三个值可选：no，interfaces，targetClass</p>
+<h3 id="Bean-的（Autowiring）注解说明"><a href="#Bean-的（Autowiring）注解说明" class="headerlink" title="Bean 的（Autowiring）注解说明"></a>Bean 的（Autowiring）注解说明</h3><h4 id="Required（不常用）"><a href="#Required（不常用）" class="headerlink" title="@Required（不常用）"></a>@Required（不常用）</h4><ul>
+<li>是用于 bean 属性的 setter 方法</li>
+<li>表示受影响的 bean 属性必须在配置时被填充，通过在 bean 定义或通过自动装配一个明确的属性值</li>
+</ul>
+<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><p>使用 1</p>
+<ul>
+<li>传统的 setter 方法</li>
+<li>也可以用于构造器或者成员变量</li>
+<li>我们可以注解那些众所周知的解析依赖性接口，比如：BeanFactory，MessageSource 等</li>
+</ul>
+<p>注意</p>
+<ul>
+<li>默认情况下，如果找不到和实施的 bean 会抛出异常，所有可以用@Autowired(required&#x3D;false)来避免</li>
+<li>每一个类只能有一个构造器被标注为 true</li>
+<li>如果为 true 的必要属性，那么建议用@Resource</li>
+</ul>
+<p>使用 2</p>
+<ul>
+<li>可以通过添加注解给需要该类型实例的数组的字段和方法，以提供 ApplicationContext 中所有特定类型的 bean<br>public void setFunc(Set<BeanType> name){<br>this.name&#x3D;name;<br>}<br>List<BeanType>;<br>Map&lt;String,BeanType&gt;(String 为 bean 的 id)</li>
+<li>如果希望数组有序，可以让 bean 实现@Order 注解（Order 只针对 List 或 set）</li>
+</ul>
+<p>注意<br>@Autowired 是由两种类型的 Bean 进行处理的，因此自定义这两种类的时候，我们需要通过</p>
+<h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><p>可以指定特定的唯一的 bean，当子类有多个类型的时候。</p>
+<p>我们一般用@Resource 来通过注解，这是一个与所声明类型无关的匹配过程。</p>
+<ul>
+<li>@Auto 用于属性，构造器，多参数方法，允许在参数级别使用@Qual 缩小范围</li>
+<li>@Resource 适用于成员变量、只有一个参数的 setter 方法，使用构造器，多参数用@Qual</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired()</span></span><br><span class="line"><span class="meta">@Qualifier(&quot;beanImplTwo&quot;)</span></span><br><span class="line"><span class="keyword">private</span> BeanInterface beanInterface;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基于-Java-的容器注解"><a href="#基于-Java-的容器注解" class="headerlink" title="基于 Java 的容器注解"></a>基于 Java 的容器注解</h3><h4 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h4><ul>
+<li>@Configuration(类注解，相当于一个配置类)<br>@Bean(方法注解)<br>public Myservice myService(){<br>return new MyserviceImpl();<br>&#x2F;&#x2F;相当于定义了一个 id 叫做 myService 的 Bean<br>}</li>
+</ul>
+<h4 id="Bean（默认单例）"><a href="#Bean（默认单例）" class="headerlink" title="@Bean（默认单例）"></a>@Bean（默认单例）</h4><ul>
+<li>自定义 Bean 的那么@Bean(name&#x3D;”myName”)。默认的是方法的名称<br>@Bean(init-method&#x3D;””)<br>@Bean(destroyMethod&#x3D;””)</li>
+</ul>
+<h4 id="ImportResource，加载资源文件"><a href="#ImportResource，加载资源文件" class="headerlink" title="@ImportResource，加载资源文件"></a>@ImportResource，加载资源文件</h4><p>配置数据库<br>在 xml 中，用&lt;context:property-placeholder location&#x3D;”….&#x2F;jdbc.properties”&gt;</p>
+<p>下面用${jdbc.url}(username,password)</p>
+<p>仍然</p>
+<p>@Configuration<br>@ImportResource(“classpath:…”)</p>
+<p>@Value(“${jdbc.url}”)<br>@Value(“${jdbc.username}”)</p>
+<ul>
+<li><strong>需要注意的是，username 拿到的是登录系统的用户名，因此一般来说数据库的用户名都加 jdbc</strong></li>
+</ul>
+<p>也就说与操作系统重复的都需要进行性注意</p>
+<h4 id="Scope"><a href="#Scope" class="headerlink" title="@Scope"></a>@Scope</h4><ul>
+<li>@Bean<br>@Scope(value&#x3D;”session”,proxyMode&#x3D;)</li>
+</ul>
+<h4 id="基于泛型的自动装配"><a href="#基于泛型的自动装配" class="headerlink" title="基于泛型的自动装配"></a>基于泛型的自动装配</h4><h3 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h3><ul>
+<li>注解变量或者 setter</li>
+<li>@–(name&#x3D;””)，默认是属性名和 setter 方法得出</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/SpringCloud/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Spring Cloud学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/25/XML%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XML学习手册</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 xywu
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
